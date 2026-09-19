@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  plan         String   @default("FREE")
+  isDemo       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  preferences UserPreference?
+  saved       SavedOpportunity[]
+}
+
+model UserPreference {
+  id         String   @id @default(cuid())
+  userId     String   @unique
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  interests  String   @default("[]")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model TrendSignal {
+  id                String   @id @default(cuid())
+  source            String
+  sourceUrl         String
+  title             String
+  description       String   @default("")
+  author            String?
+  publishedAt       DateTime
+  discoveredAt      DateTime @default(now())
+  category          String   @default("Other")
+  engagement        Int      @default(0)
+  engagementVelocity Float   @default(0)
+  keywords          String   @default("[]")
+  rawData           String   @default("{}")
+  confidenceScore   Float    @default(0.5)
+  clusterId         String?
+  createdAt         DateTime @default(now())
+
+  cluster  TrendCluster?    @relation(fields: [clusterId], references: [id])
+  oppSources OpportunitySource[]
+
+  @@index([source])
+  @@index([category])
+  @@index([clusterId])
+}
+
+model TrendCluster {
+  id                 String   @id @default(cuid())
+  title              String
+  category           String   @default("Other")
+  sourceCount        Int      @default(1)
+  totalEngagement    Int      @default(0)
+  engagementVelocity Float    @default(0)
+  firstSeen          DateTime
+  lastSeen           DateTime @default(now())
+  sourceDiversity    Float    @default(0)
+  signalIds          String   @default("[]")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  signals TrendSignal[]
+}
+
+model Opportunity {
+  id                      String   @id @default(cuid())
+  title                   String
+  summary                 String   @default("")
+  category                String   @default("Other")
+  earlySignal             String   @default("Emerging")
+  whyNow                  String   @default("")
+  whatIsChanging          String   @default("")
+  whyPeopleCare           String   @default("")
+  turkeyFit               Int      @default(0)
+  competitionGap          Int      @default(0)
+  monetizationPotential   Int      @default(0)
+  buildability            Int      @default(0)
+  viralPotential          Int      @default(0)
+  novelty                 Int      @default(0)
+  trendVelocity           Int      @default(0)
+  overallScore            Int      @default(0)
+  scoreBreakdown          String   @default("[]")
+  estimatedMvpTime        String   @default("<1 week")
+  suggestedBusinessModel  String   @default("[]")
+  suggestedTurkishAngle   String   @default("")
+  localizationNotes       String   @default("")
+  status                  String   @default("ACTIVE")
+  isDemo                  Boolean  @default(true)
+  fingerprint             String   @default("")
+  lastIngestedAt          DateTime @default(now())
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  sources OpportunitySource[]
+  saved   SavedOpportunity[]
+}
+
+model OpportunitySource {
+  id             String   @id @default(cuid())
+  opportunityId  String
+  signalId       String
+  opportunity    Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  signal         TrendSignal @relation(fields: [signalId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+
+  @@unique([opportunityId, signalId])
+  @@index([opportunityId])
+  @@index([signalId])
+}
+
+model SavedOpportunity {
+  id             String   @id @default(cuid())
+  userId         String
+  opportunityId  String
+  status         String   @default("WATCHING")
+  note           String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  opportunity  Opportunity  @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, opportunityId])
+  @@index([userId])
+}

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+html {
+  background: #faf8f2;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+::selection {
+  background: #f0d9cd;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cfc6b2 transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #cfc6b2;
+  border-radius: 8px;
+}
+
+:focus-visible {
+  outline: 2px solid #b23a24;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .rule {
+    @apply border-t border-line;
+  }
+  .kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-dim;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded border px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn border-brick-deep bg-brick text-white hover:bg-brick-deep;
+  }
+  .btn-ghost {
+    @apply btn border-line bg-paper-card text-ink hover:border-ink-dim;
+  }
+  .btn-subtle {
+    @apply btn border-transparent text-ink-soft hover:text-ink px-2;
+  }
+  .input {
+    @apply w-full rounded border border-line bg-paper-card px-3 py-2 text-sm text-ink placeholder:text-ink-faint outline-none focus:border-brick;
+  }
+  .label {
+    @apply block text-xs font-medium text-ink-soft mb-1.5;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-sm bg-paper-soft;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

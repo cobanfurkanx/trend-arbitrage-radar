@@ -1,0 +1,27 @@
+name: Legacy database ingest (manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+      AI_PROVIDER: openrouter
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      OPENROUTER_MODEL: openrouter/free
+      GITHUB_TOKEN: ${{ secrets.PROD_GITHUB_TOKEN }}
+      PRODUCT_HUNT_TOKEN: ${{ secrets.PROD_PRODUCTHUNT_TOKEN }}
+      DEMO_MODE: "false"
+      PRUNE_AFTER_DAYS: "7"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npm run ingest
