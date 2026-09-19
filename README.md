@@ -1,10 +1,16 @@
 # TrendCatcher
 
+**Live demo: https://trendcatcher-shepardai.pages.dev/**
+
 Free research desk for Turkish solo builders. Real foreign product signals, explicit evidence levels, narrow MVP plans and a private browser notebook. The editorial paper/serif UI is retained.
 
 **No server, database or paid model required for the default MVP.** AI runs during collection and its cached output is shared by all readers. No AI keys enter the static site.
 
 ## Start
+
+**Use the live site, no install needed: https://trendcatcher-shepardai.pages.dev/**
+
+Run locally only if you want to collect or develop:
 
 Node.js 24 is required for collection with system CA trust.
 
@@ -15,7 +21,7 @@ npm run build
 npm start
 ```
 
-Open http://localhost:3101. For development: `npm run dev` (port 3100).
+Local preview: http://localhost:3101. For development: `npm run dev` (port 3100).
 
 Optionally put `OPENROUTER_API_KEY` in root `.env.local`. Only free models are accepted; maximum 40 attempts per UTC day and five per run by default. Without a key, source collection still works and cards honestly show pending research. See `.env.radar.example`.
 
@@ -45,6 +51,8 @@ Optionally put `OPENROUTER_API_KEY` in root `.env.local`. Only free models are a
 `scripts/radar-cycle.ps1` collects and rebuilds every 60 minutes while running. No schedule or deployment is installed automatically. The private `.radar` directory preserves history, API quota and cached analyses across runs.
 
 ## Publish
+
+Live deployment: **https://trendcatcher-shepardai.pages.dev/** (Cloudflare Pages, `free/out`).
 
 Upload only `free/out` to a static host such as Cloudflare Pages. Recommended existing-domain address: `trends.shepardai.pro`. For a subpage build, set `RADAR_BASE_PATH=/trends` and mount at `/trends` on the existing host. DNS and hosting are not changed by local builds.
 
