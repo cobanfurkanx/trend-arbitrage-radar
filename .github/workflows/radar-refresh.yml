@@ -1,0 +1,93 @@
+name: Radar refresh (every 6h)
+
+# Collects sources, rebuilds the static site, commits the fresh snapshot
+# and deploys free/out to Cloudflare Pages. The .radar state directory
+# (history + AI quota ledger) is preserved between runs via Actions cache.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: radar-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      RADAR_MODEL: openrouter/free
+      RADAR_DAILY_AI_LIMIT: "40"
+      RADAR_AI_PER_RUN: "5"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          # Pinned: package-lock.json was generated with the npm bundled
+          # in this Node release. Floating `24` pulls a newer npm whose
+          # optional-dependency resolution no longer matches the lock.
+          node-version: 24.13.0
+          cache: npm
+
+      - name: Restore radar state cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .radar
+          key: radar-state-v1-${{ github.run_id }}
+          restore-keys: radar-state-v1-
+
+      - run: npm ci
+      - run: npx prisma generate
+
+      - name: Verify deploy secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=0
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || { echo "::error::Missing secret CLOUDFLARE_API_TOKEN"; missing=1; }
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || { echo "::error::Missing secret CLOUDFLARE_ACCOUNT_ID"; missing=1; }
+          if [ "$missing" = 1 ]; then
+            echo "Add them under GitHub repo Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+          echo "Deploy secrets present."
+
+      - name: Collect radar
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then echo "::warning::OPENROUTER_API_KEY not set; collecting sources without AI analysis."; fi
+          npm run radar:collect
+
+      - run: npm run build
+      - run: npm run verify:export
+
+      - name: Commit fresh snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add free/public/data/radar.json
+          git diff --cached --quiet && echo "Snapshot unchanged; nothing to commit." || git commit -m "chore(radar): scheduled refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:main
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 pages deploy free/out --project-name trendcatcher-shepardai --branch main --commit-dirty=true
+
+      - name: Save radar state cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .radar
+          key: radar-state-v1-${{ github.run_id }}

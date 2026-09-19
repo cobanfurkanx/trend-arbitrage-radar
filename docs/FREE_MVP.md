@@ -22,7 +22,7 @@ Use `npm run dev` for development on port 3100. `npm run radar:collect -- --no-a
 
 ## Collection and budget
 
-Run `scripts/radar-cycle.ps1` to collect and rebuild every 60 minutes while this computer and process are running. `-Once` runs one cycle. No scheduled task, background process, cloud schedule, or deployment is installed automatically.
+Run `scripts/radar-cycle.ps1` to collect and rebuild every 60 minutes while this computer and process are running. `-Once` runs one cycle. Automated public refresh runs in GitHub Actions (`.github/workflows/radar-refresh.yml`, every 6 hours): collect, rebuild, commit the snapshot and deploy `free/out` to Cloudflare Pages. It needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repo secrets (`OPENROUTER_API_KEY` optional; without it sources still collect and cards show pending research).
 
 The old database ingestion workflow is manual only. It is not part of the free pipeline.
 
@@ -79,6 +79,6 @@ Preferred address: `trends.shepardai.pro`. Upload **only `free/out`** to Cloudfl
 
 For `shepardai.pro/trends`, set `RADAR_BASE_PATH=/trends` in the build shell and mount the exported directory at `/trends` on the existing host. This needs compatible routing on that host. A subdomain avoids changing the existing application's routes. The existing hosting account and DNS have not been modified.
 
-After future collection cycles, the local build changes but the hosted copy does not: upload the new `free/out` again. An hourly fresh public feed needs automated deployment, which is intentionally left for the chosen host/account. Local updates and public publication are distinct.
+After future collection cycles, the local build changes but the hosted copy does not: upload the new `free/out` again, or rely on the scheduled GitHub Actions refresh which deploys automatically. An hourly fresh public feed needs automated deployment; the default schedule is every 6 hours. Local updates and public publication are distinct.
 
 Free does not mean unlimited availability. If collection fails, keep the last successful cards and show source failures/staleness. If AI quota is exhausted, serve cached analyses. Check current provider terms and free quotas before deployment. Domain renewal and this computer's operation are outside the zero additional service cost claim.
