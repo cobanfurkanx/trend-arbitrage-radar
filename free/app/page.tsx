@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Bookmark, Check, Copy, Download, Search } from "lucide-react";
 import type { Card, Snapshot } from "../../src/lib/radar/schema";
 import { buildPrompt, economics, notebookSchema, type Notebook } from "../../src/lib/radar/client";
@@ -30,6 +30,7 @@ export default function Page() {
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [notebook, setNotebook] = useState<Notebook>({});
+  const notebookRef = useRef<Notebook>({});
   const [storageReady, setStorageReady] = useState(false);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
@@ -50,7 +51,10 @@ export default function Page() {
     return () => ctrl.abort();
   }, [reload]);
   useEffect(() => {
-    try { setNotebook(notebookSchema.parse(JSON.parse(localStorage.getItem(STORAGE) ?? "{}"))); }
+    try {
+      notebookRef.current = notebookSchema.parse(JSON.parse(localStorage.getItem(STORAGE) ?? "{}"));
+      setNotebook(notebookRef.current);
+    }
     catch { setNotice("Kayıtlar okunamadı. Varsa yedeğini içe aktar; yeni kayıtlar bu cihazda tutulacak."); }
     setStorageReady(true);
     const sync = () => setSelected(new URL(window.location.href).searchParams.get("idea"));
@@ -58,7 +62,8 @@ export default function Page() {
     return () => window.removeEventListener("popstate", sync);
   }, []);
   function update(id: string, value: Notebook[string] | null) {
-    const next = { ...notebook }; if (value) next[id] = value; else delete next[id];
+    const next = { ...notebookRef.current }; if (value) next[id] = value; else delete next[id];
+    notebookRef.current = next;
     setNotebook(next);
     try { localStorage.setItem(STORAGE, JSON.stringify(next)); }
     catch { setNotice("Tarayıcı kayıt alanı kullanılamıyor. Kaybolmaması için notlarını dışa aktar."); }
@@ -117,7 +122,16 @@ export default function Page() {
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-xs text-ink-dim"><span>{visible.length} sonuç · {tab === "tools" ? "SDK ve altyapı araçları; gelir fırsatı olarak sunulmaz." : "Müşteri grupları ve yapılabilirlik hipotezdir. Bilinmeyen bütçeler gizlenmez."}</span><button className="underline" onClick={() => { setBuilderFilters({ ...defaultBuilderFilters, scope: "all" }); setCategory("all"); setDays("all"); setQuery(""); setRevenuePreset("all"); }}>Tüm filtreleri temizle</button></div>
           {tab === "saved" && <div className="mb-4 flex flex-wrap gap-2"><button className="btn-ghost text-xs" onClick={() => download("trendcatcher-notlar.json", JSON.stringify(notebook, null, 2))}><Download size={14} /> Notları dışa aktar</button><label className="btn-ghost cursor-pointer text-xs">Yedek içe aktar<input className="sr-only" type="file" accept="application/json,.json" onChange={async (e) => {
             const f = e.target.files?.[0]; if (!f) return;
-            try { if (f.size > 2_000_000) throw new Error(); const imported = notebookSchema.parse(JSON.parse(await f.text())); const merged = { ...notebook, ...imported }; localStorage.setItem(STORAGE, JSON.stringify(merged)); setNotebook(merged); setNotice("Notlar içe aktarıldı."); }
+            try {
+              if (f.size > 2_000_000) throw new Error();
+              const imported = notebookSchema.parse(JSON.parse(await f.text()));
+              // File reads are asynchronous; merge with edits made while waiting.
+              const merged = { ...notebookRef.current, ...imported };
+              localStorage.setItem(STORAGE, JSON.stringify(merged));
+              notebookRef.current = merged;
+              setNotebook(merged);
+              setNotice("Notlar içe aktarıldı.");
+            }
             catch { setNotice("Yedek okunamadı. Geçerli bir TrendCatcher JSON yedeği seç."); }
             e.target.value = "";
           }} /></label></div>}
