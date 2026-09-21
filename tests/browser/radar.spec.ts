@@ -72,6 +72,41 @@ test("saved notes, progress, filters, plan download and economics work without a
   expect(JSON.parse(await readFile((await backup.path())!, "utf8"))[card.id].note).toBe("Üç ajansla görüştüm.");
 });
 
+test("backup import preserves ideas saved while the file is being read", async ({ page }) => {
+  await page.route("**/data/radar.json", (r) => r.fulfill({ json: { version: 1, generatedAt: new Date().toISOString(), lastSuccessfulCollection: new Date().toISOString(), sources: [], cards: [card] } }));
+  await page.goto("/");
+  await page.getByRole("button", { name: "Çalışma listem", exact: true }).click();
+  // Hold file I/O open while the user continues working in the notebook.
+  await page.evaluate(() => {
+    const original = File.prototype.text;
+    File.prototype.text = async function () {
+      await new Promise<void>((resolve) => {
+        Object.assign(window, { finishBackupRead: resolve });
+      });
+      return original.call(this);
+    };
+  });
+  await page.getByLabel("Yedek içe aktar").setInputFiles({
+    name: "backup.json", mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify({ p_archived: { status: "building", note: "Imported research" } })),
+  });
+  await page.waitForFunction(() => "finishBackupRead" in window);
+  await page.getByRole("button", { name: "Erken radar", exact: true }).click();
+  await page.getByRole("button", { name: "Kaydet", exact: true }).click();
+  await page.evaluate(() => (window as unknown as { finishBackupRead: () => void }).finishBackupRead());
+  await expect(page.getByRole("status")).toContainText("Notlar içe aktarıldı.");
+  await page.reload();
+  await page.getByRole("button", { name: "Çalışma listem", exact: true }).click();
+  await expect(page.locator("article")).toHaveCount(1);
+  const downloadEvent = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Notları dışa aktar" }).click();
+  const backup = await downloadEvent;
+  expect(JSON.parse(await readFile((await backup.path())!, "utf8"))).toEqual({
+    [card.id]: { status: "watching", note: "" },
+    p_archived: { status: "building", note: "Imported research" },
+  });
+});
+
 test("a failed snapshot request has a recoverable error state", async ({ page }) => {
   await page.route("**/data/radar.json", (r) => r.fulfill({ status: 503 }));
   await page.goto("/");
