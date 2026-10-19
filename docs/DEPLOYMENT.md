@@ -1,5 +1,13 @@
 # Cloudflare Pages deployment
 
+## TrendRadar custom domain
+
+Primary URL: https://trendradar.shepardai.pro/. The existing Pages project remains `trendcatcher-shepardai`; scheduled uploads keep targeting it. Register the custom domain in Pages before creating the Porkbun DNS record: CNAME `trendradar` to `trendcatcher-shepardai.pages.dev` (TTL 600). Check domain activation, HTTPS and `/data/radar.json` before declaring the migration complete.
+
+Browser notebooks are scoped to the origin. Export notes from the old pages.dev address and import them at the new address. The existing `trendcatcher.notebook.v1` storage key remains compatible; existing JSON backups are still accepted.
+
+Rollback: production deployment `e21397b8-51c1-4c06-ae32-e8cbfbc64787` preceded the rename. The original pages.dev address remains available.
+
 Target: `trendcatcher-shepardai` on Cloudflare Pages Free. Only the built `free/out` directory is uploaded. No Next.js server, legacy authenticated application, database, private collection state or environment files are deployed.
 
 ## First launch

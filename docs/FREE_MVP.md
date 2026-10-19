@@ -75,7 +75,7 @@ Run `npm run radar:export` then `npm run build:free` after editing reviews. Empt
 
 ## Publish on your existing domain
 
-Preferred address: `trends.shepardai.pro`. Upload **only `free/out`** to Cloudflare Pages Direct Upload and configure that subdomain in the hosting dashboard. Do not upload `.radar`, `.env*`, source state or a repository ZIP. Do not expose a database.
+Preferred address: `trendradar.shepardai.pro`. Upload **only `free/out`** to Cloudflare Pages Direct Upload and configure that subdomain in the hosting dashboard. Do not upload `.radar`, `.env*`, source state or a repository ZIP. Do not expose a database.
 
 For `shepardai.pro/trends`, set `RADAR_BASE_PATH=/trends` in the build shell and mount the exported directory at `/trends` on the existing host. This needs compatible routing on that host. A subdomain avoids changing the existing application's routes. The existing hosting account and DNS have not been modified.
 
