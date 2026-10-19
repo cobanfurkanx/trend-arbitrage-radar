@@ -77,7 +77,7 @@ Run `npm run radar:export` then `npm run build:free` after editing reviews. Empt
 
 Preferred address: `trendradar.shepardai.pro`. Upload **only `free/out`** to Cloudflare Pages Direct Upload and configure that subdomain in the hosting dashboard. Do not upload `.radar`, `.env*`, source state or a repository ZIP. Do not expose a database.
 
-For `shepardai.pro/trends`, set `RADAR_BASE_PATH=/trends` in the build shell and mount the exported directory at `/trends` on the existing host. This needs compatible routing on that host. A subdomain avoids changing the existing application's routes. The existing hosting account and DNS have not been modified.
+For `shepardai.pro/trends`, set `RADAR_BASE_PATH=/trends` in the build shell and mount the exported directory at `/trends` on the existing host. This needs compatible routing on that host. A subdomain avoids changing the existing application's routes. The existing Pages project now serves trendradar.shepardai.pro through a Porkbun CNAME; HTTPS and public JSON were verified on 2026-10-19.
 
 After future collection cycles, the local build changes but the hosted copy does not: upload the new `free/out` again, or rely on the scheduled GitHub Actions refresh which deploys automatically. An hourly fresh public feed needs automated deployment; the default schedule is every 6 hours. Local updates and public publication are distinct.
 

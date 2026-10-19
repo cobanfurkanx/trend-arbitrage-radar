@@ -50,4 +50,4 @@ The [Actions workflow](../.github/workflows/radar-refresh.yml) runs every six ho
 
 ## Verification boundary
 
-The rename passed a production static build, the configured-credential/private-file export check and five existing browser checks covering mobile rendering, notes/progress, filters, plan downloads, economics, failed snapshot recovery, builder constraints and revenue provenance. These checks establish behavior on the tested snapshot; they do not establish customer traction, a load-test SLA or model accuracy. Domain activation and public HTTPS are verified separately during release.
+The rename passed a production static build, the configured-credential/private-file export check and six existing browser checks covering mobile rendering, notes/progress, filters, plan downloads, economics, failed snapshot recovery, builder constraints and revenue provenance. These checks establish behavior on the tested snapshot; they do not establish customer traction, a load-test SLA or model accuracy. Final release checks also verified active domain status, browser HTTPS, canonical metadata, rendered cards and public JSON on https://trendradar.shepardai.pro/.
