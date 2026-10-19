@@ -1,6 +1,8 @@
-# TrendCatcher
+# TrendRadar
 
-**Live demo: https://trendcatcher-shepardai.pages.dev/**
+**Product: https://trendradar.shepardai.pro/**
+
+[Engineering teardown](docs/ENGINEERING_TEARDOWN.md) · [Portfolio case study](https://cobanfurkanx.github.io/trendradar-case-study/)
 
 Free research desk for Turkish solo builders. Real foreign product signals, explicit evidence levels, narrow MVP plans and a private browser notebook. The editorial paper/serif UI is retained.
 
@@ -8,7 +10,7 @@ Free research desk for Turkish solo builders. Real foreign product signals, expl
 
 ## Start
 
-**Use the live site, no install needed: https://trendcatcher-shepardai.pages.dev/**
+**Use the live site, no install needed: https://trendradar.shepardai.pro/**
 
 Run locally only if you want to collect or develop:
 
@@ -52,9 +54,9 @@ Optionally put `OPENROUTER_API_KEY` in root `.env.local`. Only free models are a
 
 ## Publish
 
-Live deployment: **https://trendcatcher-shepardai.pages.dev/** (Cloudflare Pages, `free/out`).
+Live deployment: **https://trendradar.shepardai.pro/** (Cloudflare Pages, `free/out`).
 
-Upload only `free/out` to a static host such as Cloudflare Pages. Recommended existing-domain address: `trends.shepardai.pro`. For a subpage build, set `RADAR_BASE_PATH=/trends` and mount at `/trends` on the existing host. DNS and hosting are not changed by local builds.
+Upload only `free/out` to a static host such as Cloudflare Pages. Recommended existing-domain address: `trendradar.shepardai.pro`. For a subpage build, set `RADAR_BASE_PATH=/trends` and mount at `/trends` on the existing host. DNS and hosting are not changed by local builds.
 
 [Full operations, evidence editing and zero-cost deployment instructions](docs/FREE_MVP.md).
 
