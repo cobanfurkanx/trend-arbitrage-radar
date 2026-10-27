@@ -12,3 +12,8 @@ it("rejects unsupported Turkey-first claims and unknown architecture presented a
   expect(() => vetAnalysis({ ...draft, builder: { buyer: "agency", format: "web", upfrontUsd: 0, monthlyUsd: 0, needsApi: false, needsGpu: false, needsPrivateData: false, basis: "Kaynakta açık mimari veya fiyat yoktur." } })).toThrow();
 });
 it("accepts an actionable hypothesis without manufacturing evidence", () => { expect(vetAnalysis(draft)).toEqual(draft); });
+
+it("rejects corrupted generated language", () => {
+  expect(() => vetAnalysis({ ...draft, summary: "Türk yazarlar ve内容aratörler" })).toThrow("AI_INVALID_LANGUAGE");
+  expect(() => vetAnalysis({ ...draft, problem: "humansa devredilir" })).toThrow("AI_INVALID_LANGUAGE");
+});

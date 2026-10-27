@@ -6,12 +6,12 @@ test("built site serves real signals and stays usable on mobile", async ({ page 
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("kanıtla seç");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Ürünleri araştır");
   const json = await (await page.request.get("/data/radar.json")).json() as Snapshot;
   expect(json.version).toBe(1);
   if (json.cards.length) {
     await expect(page.locator("article").first()).toBeVisible();
-    await page.getByRole("button", { name: "Dosyayı aç", exact: true }).first().click();
+    await page.getByRole("button", { name: "İncele", exact: true }).first().click();
     await expect(page.getByRole("heading", { name: "Kaynak kanıtları" })).toBeVisible();
     await page.reload();
     await expect(page.getByRole("heading", { name: "Kaynak kanıtları" })).toBeVisible();
@@ -34,7 +34,7 @@ const card: Card = {
   analysis: {
     title: "Test: Fatura takip aracı", summary: "Yalnız tarayıcı testi için hazırlanmış araştırma hipotezi.", customer: "Küçük ajanslar", problem: "Geciken fatura takibi", turkishAngle: "Türkçe hatırlatma hipotezi",
     features: ["Fatura ekle", "Vade takibi", "Hatırlatma taslağı"], firstCustomers: ["Beş ajansla görüş"],
-    validation: ["Beş müşteri görüşmesi yap", "Bir ödeme niyeti ara"], stopCondition: "Beş görüşmede ihtiyaç yoksa dur", unknowns: ["Ödeme isteği bilinmiyor"], mvpDays: 3, difficulty: "easy",
+    validation: ["Beş müşteri görüşmesi yap", "Bir ücretli pilot teklif et"], stopCondition: "Beş görüşmede ihtiyaç yoksa dur", unknowns: ["Ödeme isteği bilinmiyor"], mvpDays: 3, difficulty: "easy",
   },
 };
 
@@ -50,7 +50,7 @@ test("saved notes, progress, filters, plan download and economics work without a
   await page.getByRole("button", { name: "Kaydet", exact: true }).click();
   await page.getByRole("button", { name: "Çalışma listem", exact: true }).click();
   await expect(page.locator("article")).toHaveCount(1);
-  await page.getByRole("button", { name: "Dosyayı aç", exact: true }).click();
+  await page.getByRole("button", { name: "İncele", exact: true }).click();
   await page.getByLabel("Aşama", { exact: true }).selectOption("interviewing");
   await page.getByLabel("Görüşmeler, bulgular, kararlar").fill("Üç ajansla görüştüm.");
   await page.reload();
@@ -113,7 +113,7 @@ test("a failed snapshot request has a recoverable error state", async ({ page })
   await expect(page.getByRole("alert").filter({ hasText: "Veriler yüklenemedi" })).toBeVisible();
   await page.unroute("**/data/radar.json");
   await page.getByRole("button", { name: "Yeniden dene" }).click();
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("kanıtla seç");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Ürünleri araştır");
 });
 
 test("builder filters keep unknown costs out and separate SDKs from ideas", async ({ page }) => {
@@ -133,7 +133,7 @@ test("builder filters keep unknown costs out and separate SDKs from ideas", asyn
   await page.getByRole("button", { name: "Tüm filtreleri temizle" }).click();
   await page.getByRole("button", { name: "Yapım araçları", exact: true }).click();
   await expect(page.locator("article")).toHaveCount(1);
-  await page.getByRole("button", { name: "Dosyayı aç", exact: true }).click();
+  await page.getByRole("button", { name: "İncele", exact: true }).click();
   await expect(page.getByText("Yapım aracı; doğrudan satılabilir ürün olarak değerlendirilmedi.")).toBeVisible();
 });
 
@@ -153,7 +153,7 @@ test("revenue examples work without AI and distinguish income from profit", asyn
   await page.getByLabel("Gelir seçkisi", { exact: true }).selectOption("margin");
   await expect(page.locator("article")).toHaveCount(0);
   await page.getByLabel("Gelir seçkisi", { exact: true }).selectOption("all");
-  await page.getByRole("button", { name: "Dosyayı aç", exact: true }).click();
+  await page.getByRole("button", { name: "İncele", exact: true }).click();
   await expect(page.getByText("Kâr marjı · sahibinin beyanı", { exact: true })).toBeVisible();
   await expect(page.getByText("Gelir, net kâr değildir.", { exact: false })).toBeVisible();
   await expect(page.getByRole("link", { name: "Gelir kaynağını aç" })).toHaveAttribute("href", "https://trustmrr.com/startup/example");

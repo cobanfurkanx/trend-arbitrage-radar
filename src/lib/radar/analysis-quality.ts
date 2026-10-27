@@ -2,6 +2,8 @@ import type { Analysis } from "./schema";
 
 /** Minimum rejection gates, not a claim of automatic factual verification. */
 export function vetAnalysis(a: Analysis): Analysis {
+  const prose = JSON.stringify(a);
+  if (/[\u3400-\u9fff]|ardındanoksayış|humansa/iu.test(prose)) throw new Error("AI_INVALID_LANGUAGE");
   const validation = a.validation.join(" ");
   const claims = [a.problem, a.turkishAngle, a.builder?.basis].join(" ");
   if (/\b(bildirdi|bildirildi|ulaştı|elde edildi|kanıtlandı|doğrulandı)\b/iu.test(validation)
