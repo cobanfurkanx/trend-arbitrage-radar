@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T03:30:43.292Z",
-  "lastSuccessfulCollection": "2026-11-09T03:30:43.292Z",
+  "generatedAt": "2026-11-09T14:38:03.169Z",
+  "lastSuccessfulCollection": "2026-11-09T14:38:03.169Z",
   "sources": [
     {
       "name": "github",
@@ -11,7 +11,7 @@
     {
       "name": "hackernews",
       "status": "ok",
-      "count": 50
+      "count": 49
     },
     {
       "name": "producthunt",
@@ -28,12 +28,12 @@
     {
       "name": "trustmrr-discovery",
       "status": "ok",
-      "count": 27
+      "count": 28
     },
     {
       "name": "trustmrr-marketplace",
       "status": "ok",
-      "count": 25
+      "count": 27
     }
   ],
   "cards": [
@@ -131,13 +131,14 @@
       "category": "Consumer",
       "signalIds": [
         "s_1bd8107aeb7a1f6f75b14825",
-        "s_1cf46c4415b6f8f3d40cfb12"
+        "s_1cf46c4415b6f8f3d40cfb12",
+        "s_ba048b7596219ef7854931ab"
       ],
       "firstSeen": "2026-10-27T11:13:26.954Z",
-      "lastSeen": "2026-11-05T04:04:36.822Z",
-      "fingerprint": "508aed755787db02ee734465",
-      "analysisStatus": "ready",
-      "lastAttemptAt": "2026-11-04T22:59:34.047Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "2e93ded55da882f79078cd35",
+      "analysisStatus": "failed",
+      "lastAttemptAt": "2026-11-09T14:38:33.080Z",
       "analysis": {
         "title": "Mac Klavye Mekanik Ses Uygulaması",
         "summary": "Mac klavyelerine gerçek mekanik anahtar sesleri ekleyen menü çubuğu uygulamasıdır.",
@@ -218,9 +219,22 @@
             "paymentProvider": "dodopayment",
             "sourceUrl": "https://trustmrr.com/startup/kiiwi"
           }
+        },
+        {
+          "id": "s_ba048b7596219ef7854931ab",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com/item?id=50425827",
+          "productUrl": "https://kiiwi.app/",
+          "title": "Show HN: Kiiwi – Mechanical Keyboard sounds for your Mac",
+          "description": "",
+          "category": "Other",
+          "publishedAt": "2026-11-09T14:07:33.000Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 3
         }
       ],
-      "momentum": 27,
+      "momentum": 96,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -320,52 +334,6 @@
       "confidence": "low"
     },
     {
-      "id": "p_2afc18a620a4e171e0d6359f",
-      "title": "OmniRoom",
-      "category": "AI",
-      "signalIds": [
-        "s_73e46b30a6f8b4945ed42399"
-      ],
-      "firstSeen": "2026-11-09T03:30:43.292Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
-      "fingerprint": "9b221eec0aac5b74eeb1385b",
-      "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-09T03:31:06.446Z",
-      "signals": [
-        {
-          "id": "s_73e46b30a6f8b4945ed42399",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/omniroom",
-          "productUrl": "https://omniroom.ai/",
-          "title": "OmniRoom",
-          "description": "AI product staging built only for furniture and rugs. Upload one product photo and get marketplace-ready lifestyle scenes, white-background catalog shots, multi-angle room views, colour and material v\n- Estimated user count: 0\n\n",
-          "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
-          "firstSeen": "2026-11-09T03:30:43.292Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 670.3,
-            "mrrUsd": 641.91,
-            "totalUsd": 748.8,
-            "growth30d": 753.8853503184715,
-            "profitMarginReported": null,
-            "foundedAt": "2026-10-04T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.551Z",
-            "syncedAt": "2026-11-08T21:20:04.675Z",
-            "paymentProvider": "stripe",
-            "sourceUrl": "https://trustmrr.com/startup/omniroom"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": null,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
       "id": "p_01dd0289954cfe203e9609bd",
       "title": "Deepnia",
       "category": "AI",
@@ -373,7 +341,7 @@
         "s_e256f3d394dae07df19d4cb6"
       ],
       "firstSeen": "2026-10-23T10:40:05.624Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "ea03c7127481d035ebbca3d3",
       "analysisStatus": "ready",
       "lastAttemptAt": "2026-10-30T11:49:58.142Z",
@@ -426,19 +394,19 @@
           "title": "Deepnia",
           "description": "Deepnia creates, posts, and grows your social media with AI. Note: Our most-used payment gateway isn’t listed on TrustMRR, so our verified revenue there doesn’t reflect our full numbers.\n- Value proposition: Create content that brings you views, followers, customers, sales.\n- Problem solved: Growing an account is the hard part. Deepnia creates, posts and reads your results.\n- Pricing model: Credits: 10 credits for $3.50, 50 credits for $10.80, 100 credits for $17.00, 500 credits for $71.00; Pro and Business subscriptions available.\n- Target persona: Content creators and social media users.\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Estimated user count: 10,000\n- Additional info: White-label partner option available.\n- Markets: [Content Creation](https://trustmrr.com/category/content-creation), [AI](https://trustmrr.com/category/ai)\n\n",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-23T10:40:05.624Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 891.75,
+            "last30DaysUsd": 893.25,
             "mrrUsd": 408.6,
-            "totalUsd": 893.75,
-            "growth30d": 44487.50000000001,
+            "totalUsd": 895.25,
+            "growth30d": 44562.50000000001,
             "profitMarginReported": null,
             "foundedAt": "2026-09-28T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.551Z",
-            "syncedAt": "2026-11-08T12:35:01.701Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T12:35:02.402Z",
             "paymentProvider": "whop",
             "sourceUrl": "https://trustmrr.com/startup/deepnia"
           }
@@ -459,10 +427,10 @@
         "s_93686ffff1b8a4e9cb13dac1"
       ],
       "firstSeen": "2026-11-07T21:12:23.312Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "8810f666073455a7edc0ffab",
       "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-09T03:31:26.666Z",
+      "lastAttemptAt": "2026-11-09T14:38:59.273Z",
       "signals": [
         {
           "id": "s_93686ffff1b8a4e9cb13dac1",
@@ -472,19 +440,19 @@
           "title": "cuedesign: the taste layer for AI",
           "description": "AI can build any website now. What it can't do is make it look good. cuedesign is that missing piece: a taste layer for AI. 300+ hand-picked interactions from the best sites on the web, each with code and a prompt tuned over 30–80 rounds, delivered straight into AI editors through the Cue MCP. As more of the web gets built by AI, taste becomes what sets a site apart. First paid user 15 minutes after launch, $900+ in 16 days. Built solo.\n- Value proposition: Curated library of best-in-class web components and interactions, with code and AI prompts to recreate them.\n- Problem solved: Finding and recreating great web interactions is time-consuming. Existing libraries are often generic, outdated, or hard to customize.\n- Pricing model: $99 lifetime (Founding, first 50 members), $79 lifetime (Standard, no MCP), $49/month, or $12 for a single component\n- Target persona: Designers, developers, frontend engineers, Framer creators, vibe coders, freelan\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 0\n- Additional info: cuedesign is live on P",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-07T21:12:23.312Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 1975.6158080668731,
-            "mrrUsd": 87.01,
+            "mrrUsd": 87.13,
             "totalUsd": 3412.2781228247695,
-            "growth30d": 128.4388952879593,
+            "growth30d": 159.31214518763542,
             "profitMarginReported": 93,
             "foundedAt": "2026-09-01T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T11:54:29.655Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T11:54:26.161Z",
             "paymentProvider": "dodopayment",
             "sourceUrl": "https://trustmrr.com/startup/cuedesign"
           }
@@ -677,6 +645,52 @@
       "confidence": "low"
     },
     {
+      "id": "p_d5527acb3b2089e91a23f799",
+      "title": "PlugKit",
+      "category": "AI",
+      "signalIds": [
+        "s_0bafed0ee69f25c460aa4a59"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "c9e9bc91a8a5b36cbad860b0",
+      "analysisStatus": "failed",
+      "lastAttemptAt": "2026-11-09T14:39:14.084Z",
+      "signals": [
+        {
+          "id": "s_0bafed0ee69f25c460aa4a59",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/plugkit",
+          "productUrl": "https://plugkit.co/",
+          "title": "PlugKit",
+          "description": "PlugKit lets your AI agent run your social media. Connect Instagram, TikTok, YouTube, Facebook, X, LinkedIn and more, then ask ChatGPT, Claude or any AI that supports MCP to edit reels, schedule and publish posts, reply to comments and DMs, and read your stats. No new dashboard to learn: you talk to your AI, it does the work. Ready in minutes. 7 days free trial.\n- Value proposition: Lets users manage and grow social media through AI agents, including editing and publishing videos across seven networks, replying to comments and DMs, and tracking analytics.\n- Problem solved: Managing social media across multiple networks—editing and scheduling content, responding to comments and DMs, and monitoring performance—is time-consuming and often requires separate tools.\n- Pricing model: 7-day free trial; Creator: $49/month or $490/year; Pro: $97/month or $970/year. AI works with an existing ChatGPT or Claude subscription at no extra charge.\n- Target persona: Social media creators, brands, and agencies managing multiple accounts.\n- Audience type: [Both](https:",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 6575.072889274812,
+            "mrrUsd": 6296.54,
+            "totalUsd": 8359.672889274812,
+            "growth30d": 354.1725829193385,
+            "profitMarginReported": null,
+            "foundedAt": "2026-08-01T00:00:00.000Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T12:53:35.113Z",
+            "paymentProvider": "whop",
+            "sourceUrl": "https://trustmrr.com/startup/plugkit"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": null,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
       "id": "p_a892a6cfb75fd777f8e241d6",
       "title": "ClipUtils",
       "category": "AI",
@@ -684,10 +698,10 @@
         "s_09cae2643509572c51ca7e9d"
       ],
       "firstSeen": "2026-10-30T17:24:23.329Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "ee9a09d845706cffe7da367b",
       "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-09T03:31:38.230Z",
+      "lastAttemptAt": "2026-11-09T14:39:29.168Z",
       "signals": [
         {
           "id": "s_09cae2643509572c51ca7e9d",
@@ -697,18 +711,18 @@
           "title": "ClipUtils",
           "description": "ClipUtils is an all-in-one SaaS platform offering 28+ online tools for video, audio, and image processing. The platform includes video compression, format conversion, AI-powered subtitles, audio trans",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-30T17:24:23.329Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 597.3677296290897,
-            "mrrUsd": 377.75,
-            "totalUsd": 598.9260981627011,
-            "growth30d": 38232.892171833824,
+            "last30DaysUsd": 603.2166104571336,
+            "mrrUsd": 378.88,
+            "totalUsd": 604.7749789907451,
+            "growth30d": 38266.64087286898,
             "profitMarginReported": 75,
             "foundedAt": "2026-07-19T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "dodopayment",
             "sourceUrl": "https://trustmrr.com/startup/cliputils"
@@ -913,7 +927,7 @@
       "lastSeen": "2026-11-08T21:27:55.132Z",
       "fingerprint": "4d3c946c4311ad4644157f26",
       "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-09T03:31:49.333Z",
+      "lastAttemptAt": "2026-11-09T14:39:56.083Z",
       "signals": [
         {
           "id": "s_43057d02ba31475352823e92",
@@ -1340,6 +1354,52 @@
       "confidence": "low"
     },
     {
+      "id": "p_2afc18a620a4e171e0d6359f",
+      "title": "OmniRoom",
+      "category": "AI",
+      "signalIds": [
+        "s_73e46b30a6f8b4945ed42399"
+      ],
+      "firstSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "f234f5e61f4b13031512ba33",
+      "analysisStatus": "failed",
+      "lastAttemptAt": "2026-11-09T03:31:06.446Z",
+      "signals": [
+        {
+          "id": "s_73e46b30a6f8b4945ed42399",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/omniroom",
+          "productUrl": "https://omniroom.ai/",
+          "title": "OmniRoom",
+          "description": "AI product staging built only for furniture and rugs. Upload one product photo and get marketplace-ready lifestyle scenes, white-background catalog shots, multi-angle room views, colour and material variants, product videos and per-marketplace descriptions, all tuned to keep the product's exact shape, colour and texture. Built by a team with 20 years in furniture manufacturing and visualisation. Outputs formatted for Amazon, Wayfair, Etsy, eBay and DTC stores.\n- Value proposition: Built only for furniture and rugs: marketplace-ready lifestyle, catalog and video assets in minutes instead of weeks of photoshoots or 3D rendering, with the product's exact shape, colour and texture preserved.\n- Problem solved: Furniture and rug sellers need dozens of lifestyle, catalog and video assets per SKU for Amazon, Wayfair, Etsy and their own store. Photoshoots and 3D renders cost hundreds per product and take weeks; generic AI tools distort the product. OmniRoom builds the full set from one photo.\n- Pricing model: Credits. 32 free on signup. Monthly: Mini $9.99, Starter $29, Growth $79, Pro $199, Scale $449; credits roll over. Top-ups + enterprise/API.\n- Target",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 679.29,
+            "mrrUsd": 514.9,
+            "totalUsd": 757.79,
+            "growth30d": 765.3375796178346,
+            "profitMarginReported": null,
+            "foundedAt": "2026-03-16T00:00:00.000Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T12:53:33.128Z",
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/omniroom"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": 0,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
       "id": "p_70933554de7278eace8d7900",
       "title": "Savebase",
       "category": "Social",
@@ -1433,7 +1493,7 @@
         "s_42e8860711ed8df4d84f0a1f"
       ],
       "firstSeen": "2026-11-06T22:30:19.363Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "07b21e31c24f16b44fe91411",
       "analysisStatus": "failed",
       "lastAttemptAt": "2026-11-08T03:10:33.977Z",
@@ -1446,21 +1506,66 @@
           "title": "Noonlaunch - Product Hunt Alternative to Launch Your SaaS",
           "description": "NoonLaunch is a SaaS and AI product launch platform built to help early-stage startups, SaaS founders, indie hackers, and builders get discovered, drive traffic, and reach early users. Launch your product, get a permanent product page, earn a dofollow backlink, and improve your visibility across Google and AI search engines like ChatGPT, Gemini, Perplexity, and Claude. NoonLaunch helps founders build their digital footprint, get cited in AI search, and rank higher on Google.\n- Value proposition: SaaS and AI product launch platform that helps startups get discovered by Google, AI search engines, and potential customers through product launches, directory listings, and digital distribution.\n- Problem solved: [Private metric reference available after login.]\n- Pricing model: Free Listing, $11 Premium Launch, $49 Spotlight Launch\n- Target persona: SaaS founders, early-stage startups, indie hackers, AI builders & Developers\n- Audience type: [Both](https://trustmrr.com/search?targetAudience=Both)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 1,500\n- Additional info: [Private metric reference available after login.] Acquisition also includes a f",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-06T22:30:19.363Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 466.15999999999997,
+            "last30DaysUsd": 432.25,
             "mrrUsd": 0,
             "totalUsd": 1120.36,
-            "growth30d": 38.672060923369806,
+            "growth30d": 16.80222660577727,
             "profitMarginReported": 90,
             "foundedAt": "2026-03-07T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T10:07:11.140Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T10:07:14.550Z",
             "paymentProvider": "polar",
             "sourceUrl": "https://trustmrr.com/startup/noonlaunch"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": 0,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
+      "id": "p_b2d9aa24d8b205bfc2975fd0",
+      "title": "CatalogoHoy",
+      "category": "E-commerce",
+      "signalIds": [
+        "s_8a0163ca5a4d349d975802ad"
+      ],
+      "firstSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "af2debc14609ef5969482204",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_8a0163ca5a4d349d975802ad",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/catalogohoy",
+          "productUrl": "https://catalogohoy.com/",
+          "title": "CatalogoHoy",
+          "description": "Manage an online product catalog, orders, sales, customers, and store metrics from your phone.\n- Value proposition: All-in-one platform for small businesses in Latin America to sell online: product catalog, orders, POS, customers, expenses and sales metrics, from the web or the iOS/Android app.\n- Problem solved: Small businesses in Latin America sell through WhatsApp and Instagram with messy spreadsheets. CatalogoHoy gives them a shareable online catalog, order and stock tracking, and AI tools to load products in minutes.\n- Pricing model: Monthly or annual (50% off): Basic $11.99/mo, Pro $19.99/mo, Advanced $34.99/mo, plus custom Enterprise deals. Extra AI credits are sold as add-ons.\n- Target persona: Small and medium retailers in Latin America (mainly Venezuela): clothing, cosmet\n- ",
+          "category": "E-commerce",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
+          "firstSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 1748.9550124230323,
+            "mrrUsd": 359.27,
+            "totalUsd": 6002.363599739376,
+            "growth30d": 36.05273365729261,
+            "profitMarginReported": 88,
+            "foundedAt": "2026-03-05T00:00:00.000Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T12:53:33.069Z",
+            "paymentProvider": "revenuecat",
+            "sourceUrl": "https://trustmrr.com/startup/catalogohoy"
           }
         }
       ],
@@ -1479,8 +1584,8 @@
         "s_5712ae585e59390017fcd378"
       ],
       "firstSeen": "2026-11-07T21:12:23.312Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
-      "fingerprint": "a6c1d067741a3eeb913f1c50",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "8b499730417b0276fa3271f1",
       "analysisStatus": "pending",
       "signals": [
         {
@@ -1489,11 +1594,11 @@
           "url": "https://trustmrr.com/startup/og-bombs-europe-ivan-flores-hurtado",
           "productUrl": "https://og-bombs-eu/",
           "title": "OG Bombs Europe",
-          "description": "Vibe-coded brand, bringing northern Mexican taquería flavor to the European Union. OG Bombs are hand-pressed spice spheres from Hermosillo, Sonora: drop one in the pot and it dissolves into real Birria, Pozole or Carne con Chile, the original behind chili con carne. 100% vegan, €7.99 a bomb. Shipped from Hamburg to all 27 EU countries, with wholesale for restaurants and retailers. Small sphere, big detonation.\n- Value proposition: Handmade Mexican seasoning bombs make it easy to prepare authentic northern Mexican dishes at home, without lengthy preparation.\n- Problem solved: Home cooks and food businesses struggle to recreate authentic Mexican stews and broths conveniently; the seasoning bombs simplify preparation while saving time.\n- Pricing model: €7.99 per bomb; no subscription required. Wholesale pricing available on request.\n- Target persona: Home cooks and restaurants, caterers, and other food businesses seeking convenient authentic Mexican flavors.\n- Audience type: [Both](https://trustmrr.com/search?targetAudience=Both)\n- Estimated user count: 8,500\n- Additional info: Handmade in Sonora-ins",
+          "description": "Vibe-coded e-commerce brand, bringing northern Mexican taquería flavor to the European Union. OG Bombs are hand-pressed spice spheres from Hermosillo, Sonora: drop one in the pot and it dissolves into real Birria, Pozole or Carne con Chile, the original behind chili con carne. 100% vegan, €7.99 a bomb. Shipped from Hamburg to all 27 EU countries, with wholesale for restaurants and retailers. Small sphere, big detonation.\n- Value proposition: Handmade Mexican seasoning bombs make it easy to prepare authentic northern Mexican dishes at home, without lengthy preparation.\n- Problem solved: Home cooks and food businesses struggle to recreate authentic Mexican stews and broths conveniently; the seasoning bombs simplify preparation while saving time.\n- Pricing model: €7.99 per bomb; no subscription required. Wholesale pricing available on request and it makes 60% of overall revenue (not reflected from Stripe's API)\n- Target persona: Home cooks and restaurants, caterers, and other food businesses seeking convenient authentic Mexican flavors.\n- Audience type: [Both](https://trustmrr.com/search?targetAudience=Both)\n- ",
           "category": "Developer",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-07T21:12:23.312Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 1438.2555750850606,
@@ -1502,8 +1607,8 @@
             "growth30d": 51.930002118295015,
             "profitMarginReported": 62,
             "foundedAt": "2026-02-19T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T12:53:08.192Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T12:52:36.885Z",
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/og-bombs-europe-ivan-flores-hurtado"
           }
@@ -1524,7 +1629,7 @@
         "s_03f4d0f6c0ff64f09e88beb6"
       ],
       "firstSeen": "2026-11-09T03:30:43.292Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "bf4f2e0487c3e452360f7640",
       "analysisStatus": "pending",
       "signals": [
@@ -1536,26 +1641,26 @@
           "title": "Deeplead.io",
           "description": "Automates personalized multichannel lead generation and outreach from a business’s website, helping it find prospects and generate replies.\n- Value proposition: Automates personalized multichannel lead generation and outreach from a business’s website, helping it find prospects and generate replies.\n- Problem solved: Businesses struggle to assemble and coordinate the tools and work needed to identify suitable prospects, verify contact details, personalize outreach, and deliver emails that reach inboxes.\n- Pricing model: 3-day free trial, then $37/month; Enterprise plan also mentioned, with no price listed.\n- Target persona: Small and midsize businesses, local businesses, agencies, and other companies seeking automated outbound sales leads.\n- Audience type: [B2B](https://trustmrr.com/search?targetAudience=B2B)\n- Funding: Bootstra",
           "category": "Other",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-11-09T03:30:43.292Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 26655.21,
-            "mrrUsd": 19387.42,
-            "totalUsd": 80858.04,
-            "growth30d": 247.38224545399933,
+            "last30DaysUsd": 27144.25,
+            "mrrUsd": 22448.92,
+            "totalUsd": 81480.08,
+            "growth30d": 263.5380483486257,
             "profitMarginReported": null,
             "foundedAt": "2026-02-04T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.551Z",
-            "syncedAt": "2026-11-08T21:38:11.425Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T12:53:35.242Z",
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/deeplead-io"
           }
         }
       ],
       "momentum": 0,
-      "velocity": null,
+      "velocity": 0,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -1569,7 +1674,7 @@
         "s_69cc71fc7556b2ca330b070c"
       ],
       "firstSeen": "2026-11-06T04:00:57.907Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "360bc4b79f9e3d0f0906230e",
       "analysisStatus": "pending",
       "signals": [
@@ -1581,67 +1686,21 @@
           "title": "SaasCity",
           "description": "Product hunt alternative in 3D. Startup directory and launch platform with over 3,600 builders, an Ahrefs Domain Rating v3 of 71, real traffic, and frequent AI citations.",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-06T04:00:57.907Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 2807.34,
+            "last30DaysUsd": 2821.33,
             "mrrUsd": 0,
-            "totalUsd": 6258.16,
-            "growth30d": 63.83659177122829,
+            "totalUsd": 6292.14,
+            "growth30d": 62.75432797420213,
             "profitMarginReported": 94,
             "foundedAt": "2026-01-29T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/saascity"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": 0,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
-      "id": "p_e13518ab3ca3253c5d74d17a",
-      "title": "FlipScan: AI Reselling Scanner",
-      "category": "Consumer",
-      "signalIds": [
-        "s_21c7606c921308e31408e80b"
-      ],
-      "firstSeen": "2026-10-30T11:49:36.435Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "2043e6a5b33133749c37d5f3",
-      "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-02T14:06:35.286Z",
-      "signals": [
-        {
-          "id": "s_21c7606c921308e31408e80b",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/flipscan",
-          "productUrl": "https://flipscan.app/",
-          "title": "FlipScan: AI Reselling Scanner",
-          "description": "FlipScan is an iOS app for resellers: scan any item and instantly see what it’s worth to flip. Verified RevenueCat revenue, 33 active subscribers, 62% monthly / 38% annual plans. Top 10–20% conversion in its category per RevenueCat benchmarks. 66% US, 18% UK. Organic ASO-driven, low maintenance, no team needed. Clear upside: churn and refund improvements, Android, and paid ads.\n- Value proposition: Scan any item and instantly see its resale value\n- Problem solved: Resellers waste time guessing prices and researching what's worth flipping\n- Pricing model: FlipScan sells two App Store plans: Pro Monthly at $14.99 and Pro Yearly at $49.99 (US). Both have a 3-day free trial, live in all 175 countries.\n- Target persona: Resellers, thrifters, and people selling on eBay, Vinted and Facebook Marketplac\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 0\n- Additional info: iOS only, 100% App Store revenue verified via RevenueCat. Top 10–20% initial conversion in category (RevenueCat b",
-          "category": "Consumer",
-          "publishedAt": "2026-11-02T14:05:38.720Z",
-          "firstSeen": "2026-10-30T11:49:36.435Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 799.71,
-            "mrrUsd": 324.01,
-            "totalUsd": 3075.44,
-            "growth30d": 97.35692603835048,
-            "profitMarginReported": 70,
-            "foundedAt": "2026-01-02T00:00:00.000Z",
-            "observedAt": "2026-11-02T14:05:38.720Z",
-            "syncedAt": "2026-11-02T12:55:01.236Z",
-            "paymentProvider": "revenuecat",
-            "sourceUrl": "https://trustmrr.com/startup/flipscan"
           }
         }
       ],
@@ -1705,8 +1764,8 @@
         "s_ecb7598df192e6da454e8ed3"
       ],
       "firstSeen": "2026-11-01T12:15:32.824Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
-      "fingerprint": "24a6341938b66e93798ef193",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "fdc260365c11c1ae26d2db92",
       "analysisStatus": "failed",
       "lastAttemptAt": "2026-11-04T03:47:29.895Z",
       "signals": [
@@ -1716,21 +1775,21 @@
           "url": "https://trustmrr.com/startup/simeo",
           "productUrl": "https://zescale.co/",
           "title": "zescale",
-          "description": "Turns a product idea, link, or photo into a ready-to-sell ecommerce store, finding suppliers and generating product creatives and ads in minutes.\n- Value proposition: Turns a product idea, link, or photo into a ready-to-sell ecommerce store, finding suppliers and generating product creatives and ads in minutes.\n- Problem solved: Launching an ecommerce business typically requires multiple tools, subscriptions, costly creatives, and weeks of work; Zescale automates and consolidates these steps.\n- Pricing model: Subscription: Basic plans from €39/month; Pro plans from €159/month, with higher credit tiers available. Business coaching costs €1,297 one-time and includes Pro for 12 months.\n- Target persona: Aspiring ecommerce entrepreneurs, dropshippers, ecommerce agencies, and existing brands\n- Audience type: [Both](https://trustmrr.com/sea",
+          "description": "Turns a product idea, link, or photo into a ready-to-sell ecommerce store, finding suppliers and generating product creatives and ads in minutes.",
           "category": "E-commerce",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-01T12:15:32.824Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 5548.792049735149,
-            "mrrUsd": 3953.73,
-            "totalUsd": 47959.190803017824,
+            "last30DaysUsd": 5505.1706206114595,
+            "mrrUsd": 3969,
+            "totalUsd": 47989.738817392885,
             "growth30d": 17.29016453034169,
             "profitMarginReported": 80,
             "foundedAt": "2025-12-10T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T06:45:28.771Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/simeo"
           }
@@ -1796,7 +1855,7 @@
         "s_96bc7b3346b9ccc982b73420"
       ],
       "firstSeen": "2026-11-01T12:15:32.824Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "4a70600bf5948c7552d8f251",
       "analysisStatus": "failed",
       "lastAttemptAt": "2026-11-02T03:12:15.296Z",
@@ -1809,9 +1868,9 @@
           "title": "Next Level Builders",
           "description": "A platform offering coaching, templates, and community support for micro-SaaS founders.\n- Value proposition: The educational platform & builder resource hub where solopreneurs & micro-SaaS founders get expert-curated playbooks, proven templates, and a builder community to launch & scale products faster.\n- Problem solved: Stop wasting time figuring it out alone. Get access to proven resources, expert guidance, and a community of builders who actually ship.\n- Pricing model: Premium: $39/month billed annually at $468/year, VIP: $79/month billed annually at $948/year\n- Target persona: Solopreneurs and micro-SaaS founders\n- Audience type: [Both](https://trustmrr.com/search?targetAudience=Both)\n- Estimated user count: 500\n- Markets: [Community](https://trustmrr.com/category/community",
           "category": "SaaS",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-11-01T12:15:32.824Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 2739.56,
@@ -1820,8 +1879,8 @@
             "growth30d": 30339.55555555556,
             "profitMarginReported": null,
             "foundedAt": "2025-10-28T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.551Z",
-            "syncedAt": "2026-11-08T14:25:59.116Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T14:25:58.628Z",
             "paymentProvider": "polar",
             "sourceUrl": "https://trustmrr.com/startup/next-level-builders"
           }
@@ -1835,46 +1894,45 @@
       "confidence": "low"
     },
     {
-      "id": "p_903041d7a1d198b3d597a486",
-      "title": "The Pepino Brand",
-      "category": "SaaS",
+      "id": "p_8b2d007abe7b3c9797fa03a7",
+      "title": "Love Letter",
+      "category": "AI",
       "signalIds": [
-        "s_75faf4ae663019268310bbbd"
+        "s_b69f05f4cbb4fc9d035ab642"
       ],
-      "firstSeen": "2026-10-24T19:56:45.734Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "b83f38bf609ad7ea731f5e9e",
-      "analysisStatus": "failed",
-      "lastAttemptAt": "2026-11-02T03:12:26.230Z",
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "7981a5d0bc0042b9bf95ddc8",
+      "analysisStatus": "pending",
       "signals": [
         {
-          "id": "s_75faf4ae663019268310bbbd",
+          "id": "s_b69f05f4cbb4fc9d035ab642",
           "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/the-pepino-brand",
-          "productUrl": "https://thepepinobrand.com/",
-          "title": "The Pepino Brand",
-          "description": "The Pepino Brand es un software de gestión de marca (BrandOS) que centraliza activos (logos, tipografías, colores, plantillas) y facilita su uso y compartición. Incluye conversor multiformato, almacenamiento en la nube y personalización del portal, con soporte y onboarding.\n- Value proposition: The Pepino Brand helps centralize resources and guidelines in an on-brand portal, so your client can understand, find, and use the brand without depending on you.\n- Problem solved: Centralizing brand resources and guidelines to make them easily accessible and understandable for clients.\n- Target persona: Branding agencies, studios, and professionals\n- Audience type: [B2B](https://trustmrr.com/search?targetAudience=B2B)\n- Estimated user count: 0\n- Markets: [Design Tools](https://trustmrr.com/category/design-tools), [Productivity](https://trustmrr.com/category/productivity)\n\n",
-          "category": "SaaS",
-          "publishedAt": "2026-11-02T14:05:38.710Z",
-          "firstSeen": "2026-10-24T19:56:45.734Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
+          "url": "https://trustmrr.com/startup/love-letter",
+          "productUrl": "https://lovelettertech.com/",
+          "title": "Love Letter",
+          "description": "❤️ The charming little mailbox to keep loved ones connected anywhere in the world! 🌎\n- Value proposition: Show loved ones how much you think of them over and over and over\n- Problem solved: Keeps relationships fun with cute love notes\n- Pricing model: $85 per device\n- Target persona: Couples, family\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 1,500\n- Additional info: 550+ life time sales.\n- Markets: [E-comm](https://trustmrr.com/category/ecommerce), [IoT & Hardware](https://trustmrr.com/category/iot-hardware)\n\n",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 156.23889941467345,
-            "mrrUsd": 107.94,
-            "totalUsd": 1232.5604875459094,
-            "growth30d": 22789.13224695338,
+            "last30DaysUsd": 23307.78,
+            "mrrUsd": 0,
+            "totalUsd": 67429.95,
+            "growth30d": 43.691136353127916,
             "profitMarginReported": null,
-            "foundedAt": "2025-10-19T00:00:00.000Z",
-            "observedAt": "2026-11-02T14:05:38.710Z",
-            "syncedAt": "2026-11-02T08:13:27.364Z",
-            "paymentProvider": "stripe",
-            "sourceUrl": "https://trustmrr.com/startup/the-pepino-brand"
+            "foundedAt": "2025-10-27T00:00:00.000Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T07:52:31.166Z",
+            "paymentProvider": "shopify",
+            "sourceUrl": "https://trustmrr.com/startup/love-letter"
           }
         }
       ],
       "momentum": 0,
-      "velocity": 0,
+      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -1933,7 +1991,7 @@
         "s_1dd2b248bf3adb118fe981a0"
       ],
       "firstSeen": "2026-10-31T20:46:26.440Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "816ff9b683c144893201ad36",
       "analysisStatus": "pending",
       "signals": [
@@ -1945,9 +2003,9 @@
           "title": "DevOps Daily",
           "description": "The latest news, tutorials, and guides for DevOps professionals.\n- Value proposition: Learn DevOps by doing, not just reading.\n- Problem solved: Provides hands-on learning tools for engineers who prefer a terminal over a slide deck.\n- Pricing model: Free: $0 forever\n- Target persona: DevOps engineers\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 5,000\n- Additional info: Independent education platform\n- Markets: [Education](https://trustmrr.com/category/education), [Dev Tools](https://trustmrr.com/category/developer-tools), [SaaS](https://trustmrr.com/category/saas), [Productivity](https://trustmrr.com/category/productivity)\n\n",
           "category": "Developer",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-31T20:46:26.440Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 3628,
@@ -1956,8 +2014,8 @@
             "growth30d": 18994.736842105263,
             "profitMarginReported": null,
             "foundedAt": "2025-06-23T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.551Z",
-            "syncedAt": "2026-11-08T16:18:12.844Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": "2026-11-09T10:18:15.116Z",
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/devops-daily"
           }
@@ -2175,51 +2233,6 @@
       "confidence": "low"
     },
     {
-      "id": "p_c383c3db0003e0abf4b85e77",
-      "title": "SWE180",
-      "category": "Other",
-      "signalIds": [
-        "s_68f354ea7131776382e62aca"
-      ],
-      "firstSeen": "2026-11-02T14:05:38.466Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "4fd76844ac10dca2cf05e955",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_68f354ea7131776382e62aca",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/swe180",
-          "productUrl": "https://swe180.com/",
-          "title": "SWE180",
-          "description": "From Zero to Software Engineer in 180 Days SWE180: DSA, CS fundamentals, system design, projects, resume, and more—your complete placement prep. Your Path to Software Engineer: Crack Placements, Upskill, and Switch Right.\n- Value proposition: A structured, beginner-friendly platform that helps aspiring and working software engineers prepare for technical interviews and advance their careers through DSA, computer science fundamentals, system design, and AI-powered career tools.\n- Problem solved: Software engineering candidates often lack direction and a structured way to learn, leaving them overwhelmed by scattered resources and unsure how to prepare effectively for interviews and job transitions.\n- Pricing model: Free core preparation resources; optional paid SWE180+ membership with premium AI tools, company question archives, and mentorship benefits. Specific prices not stated.\n- Target persona: College stud",
-          "category": "Other",
-          "publishedAt": "2026-11-02T14:05:38.710Z",
-          "firstSeen": "2026-11-02T14:05:38.466Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 431.6775533934466,
-            "mrrUsd": 0,
-            "totalUsd": 694.8893202560855,
-            "growth30d": 286.6960529481299,
-            "profitMarginReported": null,
-            "foundedAt": "2024-07-01T00:00:00.000Z",
-            "observedAt": "2026-11-02T14:05:38.710Z",
-            "syncedAt": "2026-11-02T08:30:30.610Z",
-            "paymentProvider": "razorpay",
-            "sourceUrl": "https://trustmrr.com/startup/swe180"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": null,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
       "id": "p_a7724749e0b6e248a751d3ef",
       "title": "OptiMalt",
       "category": "Other",
@@ -2272,7 +2285,7 @@
         "s_db7970037c9c3a36f9b035c6"
       ],
       "firstSeen": "2026-10-27T16:59:07.185Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "f94a86572d7d6fa0af638695",
       "analysisStatus": "pending",
       "signals": [
@@ -2284,9 +2297,9 @@
           "title": "LipsyncX",
           "description": "Create Lip Sync AI videos from photos or existing videos. Add text or audio for talking photos, singing clips, video dubbing, and multilingual avatars.\n- Value proposition: Turn photos and videos into talking or singing videos with AI lip sync, making video creation easier for creators and businesses.\n- Problem solved: Reduces the time, cost, and editing skills needed to create lip-synced videos, animate photos, and match existing videos to new audio.\n- Pricing model: Pay-as-you-go credit packs from $2.99, with no subscription required. Optional Pro subscription at $39/month.\n- Target persona: Content creators, YouTubers, social media marketers, educators, and small busine\n- Audience type: [Both](https://trustmrr.com/search?targetAudience=Both)\n- Team size: 1 person\n- Estimated user count: 6,300\n- Markets: [AI](https://trustmrr.com/category",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-27T16:59:07.185Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 907.6948893819364,
@@ -2295,8 +2308,8 @@
             "growth30d": 199.00678241655513,
             "profitMarginReported": 80,
             "foundedAt": "2024-03-22T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T18:40:28.743Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T12:40:05.527Z",
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/ai-lip-sync"
           }
@@ -2452,7 +2465,7 @@
         "s_67954ca51b5d69f910982ac3"
       ],
       "firstSeen": "2026-10-19T17:54:28.400Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "8a7d0918dbc7b7d9d525ce3b",
       "analysisStatus": "pending",
       "signals": [
@@ -2464,9 +2477,9 @@
           "title": "Intentsly",
           "description": "Intentsly - Find People Looking To Buy Your Services. Our AI detects intent signals, scores prospects based on your ideal customers, starts relevant conversations on LinkedIn, Reddit, X and Facebook a",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-19T17:54:28.400Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 7387.950342129241,
@@ -2475,7 +2488,7 @@
             "growth30d": 7516.44365167963,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/intentsly"
@@ -2497,7 +2510,7 @@
         "s_ba07116d55a32f6e0c35c170"
       ],
       "firstSeen": "2026-10-01T18:08:12.772Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "6e39685dcb50d1376fad6955",
       "analysisStatus": "failed",
       "lastAttemptAt": "2026-11-08T21:28:25.682Z",
@@ -2510,18 +2523,18 @@
           "title": "lumabar",
           "description": "The Windows taskbar alternative for Windows 11 and 10: one beautiful live dock for the top or bottom of your screen, with music, todos, calendar, weather, search, stats, quick actions and 100+ widgets",
           "category": "Other",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-01T18:08:12.772Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 4240.27,
+            "last30DaysUsd": 4506.33,
             "mrrUsd": 0,
-            "totalUsd": 4264.2300000000005,
-            "growth30d": 17597.287145242062,
+            "totalUsd": 4530.29,
+            "growth30d": 18707.721202003322,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "polar",
             "sourceUrl": "https://trustmrr.com/startup/lumabar"
@@ -2543,7 +2556,7 @@
         "s_cad3d9730033f277b6cc7a76"
       ],
       "firstSeen": "2026-10-04T11:28:26.001Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "6dde0238e29887ba2aee1a75",
       "analysisStatus": "pending",
       "signals": [
@@ -2555,9 +2568,9 @@
           "title": "1418 Technologies LLC",
           "description": "Modern technology services for individuals and businesses.",
           "category": "Developer",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-04T11:28:26.001Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 3563,
@@ -2566,7 +2579,7 @@
             "growth30d": 5555.555555555556,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/1418-technologies-llc"
@@ -2588,7 +2601,7 @@
         "s_ea256e8192c6a3d4a19a88cf"
       ],
       "firstSeen": "2026-10-28T11:47:00.672Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "81be7711fe53b556493c3199",
       "analysisStatus": "pending",
       "signals": [
@@ -2600,18 +2613,18 @@
           "title": "ECOMSTATEMENT.COM",
           "description": "A suite of marketing and lead generation products to grow your business.",
           "category": "E-commerce",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-28T11:47:00.672Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 3303.7079616936103,
-            "mrrUsd": 1143.05,
+            "mrrUsd": 1146.2,
             "totalUsd": 3883.1279616936104,
             "growth30d": 5031.574963798712,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/ecomstatement-com"
@@ -2633,7 +2646,7 @@
         "s_8fb59361ecb969240dca3c00"
       ],
       "firstSeen": "2026-11-08T21:27:55.132Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "b85ea76e60fabe8026bf10f9",
       "analysisStatus": "pending",
       "signals": [
@@ -2645,19 +2658,19 @@
           "title": "Chart Scanner AI",
           "description": "Chart Scanner AI is an AI-powered fintech startup focused on making financial market analysis accessible to everyone. Our mobile app uses artificial intelligence to analyze trading charts, identify market trends, and generate clear, actionable insights in seconds. We combine AI technology with an intuitive user experience to help traders of all experience levels better understand the markets, save time, and make more informed trading decisions.\n- Value proposition: AI-powered chart analysis that turns complex market data into clear trading insights in seconds.\n- Problem solved: Makes market analysis faster, simpler, and accessible to everyone.\n- Pricing model: $7.99 weekly / $44.99 6 months\n- Target persona: Individual traders and investors interested in stocks, indexes, forex, or crypto\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Funding: Bootstrapped\n- Estimated user count: 100\n- Additional info: - Newly launched app – approximately 30 days old. - 100% organic revenue acquisition through TikTok. - Zero dollars spent on paid advertising. - Strong growth potential in a scalable nic",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-08T21:27:55.132Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 2637.71,
-            "mrrUsd": 2546.97,
-            "totalUsd": 2637.71,
+            "last30DaysUsd": 2668.78,
+            "mrrUsd": 2468.57,
+            "totalUsd": 2668.78,
             "growth30d": 200,
             "profitMarginReported": 80,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T16:02:49.030Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T12:53:33.049Z",
             "paymentProvider": "revenuecat",
             "sourceUrl": "https://trustmrr.com/startup/chart-scanner-ai"
           }
@@ -2678,7 +2691,7 @@
         "s_415a5dd84c8e60edb54272b8"
       ],
       "firstSeen": "2026-10-21T10:47:00.143Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "6ee7167249e15de9ed225de1",
       "analysisStatus": "pending",
       "signals": [
@@ -2690,9 +2703,9 @@
           "title": "Bidder iQ",
           "description": "Bidder iQ is a collector-car pricing intelligence tool built for serious buyers, sellers, and enthusiasts. It combines: A Web App for running comps, exploring price trends, segmenting auction results,",
           "category": "SaaS",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-21T10:47:00.143Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 2436,
@@ -2701,7 +2714,7 @@
             "growth30d": 6666.666666666667,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/bidder-iq"
@@ -2723,7 +2736,7 @@
         "s_edc94f10c5e5d8d1ccf867ed"
       ],
       "firstSeen": "2026-10-15T20:39:47.405Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "0324dc4b1219d344d585333b",
       "analysisStatus": "ready",
       "lastAttemptAt": "2026-10-28T17:35:18.236Z",
@@ -2774,9 +2787,9 @@
           "title": "BasinCheck",
           "description": "BasinCheck is a field-first safety audit platform for oil & gas contractors, built to replace paper checklists and spreadsheets with fast mobile inspections, offline mode, and audit-ready documentatio",
           "category": "Consumer",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-10-15T20:39:47.405Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 2225.96,
@@ -2785,7 +2798,7 @@
             "growth30d": 16425.31551596139,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/basincheck"
@@ -2807,7 +2820,7 @@
         "s_aa3aa47017f1a7c382acfc9a"
       ],
       "firstSeen": "2026-11-03T00:10:17.005Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "5015a171ad196b4d50b838ee",
       "analysisStatus": "pending",
       "signals": [
@@ -2819,18 +2832,18 @@
           "title": "Stacker: Peptide Tracker",
           "description": "Helps users build personalized peptide stacks, log doses, get reminders, and track protocol progress and results in one iPhone app.",
           "category": "Consumer",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-03T00:10:17.005Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 2020.82,
-            "mrrUsd": 419.18,
-            "totalUsd": 5030.389999999999,
+            "last30DaysUsd": 2090.81,
+            "mrrUsd": 425.01,
+            "totalUsd": 5100.38,
             "growth30d": 37.49038978357452,
             "profitMarginReported": 98,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "revenuecat",
             "sourceUrl": "https://trustmrr.com/startup/stacker"
@@ -2897,7 +2910,7 @@
         "s_3c33656934e2a8bbdef1e323"
       ],
       "firstSeen": "2026-11-08T21:27:55.132Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "224e736f5a37a0d6a6193dcf",
       "analysisStatus": "pending",
       "signals": [
@@ -2909,9 +2922,9 @@
           "title": "pdfs.build",
           "description": "pdfs.build turns a chat request into a production PDF pipeline. Describe the document you need (invoice, report, contract) and an AI agent writes a Typst template with a JSON schema and sample data, c",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-11-08T21:27:55.132Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 1485.55,
@@ -2920,7 +2933,7 @@
             "growth30d": 3311.1366245694603,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "polar",
             "sourceUrl": "https://trustmrr.com/startup/pdfs-build"
@@ -3072,6 +3085,51 @@
       "confidence": "low"
     },
     {
+      "id": "p_d0522da71d11b5b2906c079d",
+      "title": "CS2 Demo Viewer in 3D - Then Play The Moment",
+      "category": "Other",
+      "signalIds": [
+        "s_f32239ff4e7da7f00b1830a5"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "599b811cf99524f087f9e3ab",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_f32239ff4e7da7f00b1830a5",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/viewer-memorin-app",
+          "productUrl": "https://memorin.app/",
+          "title": "CS2 Demo Viewer in 3D - Then Play The Moment",
+          "description": "CS2 demo viewer in the browser and other modes like replayable moments",
+          "category": "Other",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 444.7157705467706,
+            "mrrUsd": 156.5,
+            "totalUsd": 524.4950723536326,
+            "growth30d": 3802.0276228584853,
+            "profitMarginReported": null,
+            "foundedAt": null,
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": null,
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/viewer-memorin-app"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": null,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
       "id": "p_d9dcaa239b1ae63c8d13a864",
       "title": "2FA Authenticator",
       "category": "Developer",
@@ -3169,7 +3227,7 @@
         "s_0a4ee42efe705cfa57451167"
       ],
       "firstSeen": "2026-11-06T22:30:19.363Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "b50d820171fcd61e9e29527e",
       "analysisStatus": "pending",
       "signals": [
@@ -3181,18 +3239,18 @@
           "title": "DaFreeAi",
           "description": "Create images and videos with 70+ models in one place!",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-11-06T22:30:19.363Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 255.547550909153,
-            "mrrUsd": 115.83,
+            "mrrUsd": 116.3,
             "totalUsd": 673.8767237688756,
             "growth30d": 4441.7146335316165,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/drafterplus"
@@ -3214,7 +3272,7 @@
         "s_50939e885395c0351c55518f"
       ],
       "firstSeen": "2026-10-25T15:12:39.553Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "abc9d65c86577c82214a10a0",
       "analysisStatus": "pending",
       "signals": [
@@ -3226,9 +3284,9 @@
           "title": "Regiere Deutschland",
           "description": "Become the chancellor, win elections, and govern Germany in this political simulation game.\n- Value proposition: Become the chancellor, win elections, and govern Germany or USA in this political simulation game.\n- Problem solved: Provides an engaging political simulation experience where users can make decisions affecting Germany's or USA's future.\n- Pricing model: Free · In‑App Purchases\n- Target persona: Simulation game enthusiasts interested in politics\n- Audience type: [B2C](https://trustmrr.com/search?targetAudience=B2C)\n- Team size: 1 person\n- Estimated user count: 440\n- Markets: [Entertainment](https://trustmrr.com/category/entertainment), [Mobile Apps](https://trustmrr.com/category/mobile-apps), [Games](https://trustmrr.com/category/games)\n\n",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-25T15:12:39.553Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 254.9,
@@ -3237,8 +3295,8 @@
             "growth30d": 1019.4554238032497,
             "profitMarginReported": 85,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": "2026-11-08T18:37:31.927Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": "2026-11-09T12:37:31.735Z",
             "paymentProvider": "revenuecat",
             "sourceUrl": "https://trustmrr.com/startup/regiere-deutschland"
           }
@@ -3259,7 +3317,7 @@
         "s_93e9f2569f5db69e06265317"
       ],
       "firstSeen": "2026-11-01T21:28:49.275Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "d31f1511486204cfd7018397",
       "analysisStatus": "pending",
       "signals": [
@@ -3271,9 +3329,9 @@
           "title": "slidelabs.net",
           "description": "SlideLabs (slidelabs.net) is an AI-powered marketing platform built for agencies and online sellers in Southeast Asia. It replaces a stack of scattered tools with one workspace: AI product photos, vid",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.551Z",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
           "firstSeen": "2026-11-01T21:28:49.275Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 250,
@@ -3282,7 +3340,7 @@
             "growth30d": 4066.6666666666665,
             "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.551Z",
+            "observedAt": "2026-11-09T14:38:03.381Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/slidelabs-net"
@@ -3483,7 +3541,7 @@
           "engagement": 2
         }
       ],
-      "momentum": 91,
+      "momentum": 85,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -3627,45 +3685,45 @@
       "confidence": "low"
     },
     {
-      "id": "p_9b23f418f3c718942e7186b1",
-      "title": "PaperTrace: AR Sketch",
-      "category": "SaaS",
+      "id": "p_2ba50c20ea2f5c983786d13c",
+      "title": "StoryStitch",
+      "category": "Other",
       "signalIds": [
-        "s_6480ffe7cc5652c53fe28ffa"
+        "s_ad3ff281ea1623a4481af188"
       ],
-      "firstSeen": "2026-10-30T17:24:23.329Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "918276b10eda731712622999",
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "a0614d148b13f99bc4a3f5aa",
       "analysisStatus": "pending",
       "signals": [
         {
-          "id": "s_6480ffe7cc5652c53fe28ffa",
+          "id": "s_ad3ff281ea1623a4481af188",
           "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/ar-drawing-sketch",
-          "productUrl": "https://apps.apple.com/us/app/papertrace-ar-sketch/id6800091271?uo=4",
-          "title": "PaperTrace: AR Sketch",
-          "description": "PaperTrace is a published iOS AR drawing and tracing app that helps users create artwork using their phone's camera. Features include 800+ drawing templates, photo-to-sketch conversion, adjustable opacity, grid overlays, drawing lessons, creative challenges and saved artwork. The app supports recurring subscriptions and rewarded ads, with an existing user base and organic App Store discovery. Built and launched by an independent developer (me), with opportunities for further growth.\n- Value proposition: Turn your iPhone into an accessible drawing assistant. PaperTrace combines AR camera tracing, 800+ drawing templates, photo-to-sketch conversion, structured lessons and creative challenges in one easy-to-use app. An established subscription model and rewarded ads provide multiple monetisation opport\n- Problem solved: Learning to draw can be difficult for beginners, especially when working from complex reference images. PaperTrace simplifies the process by allowing users to overlay images onto real-world surfaces through their phone camera, helping them trace, practise proportions and develop their drawing skills\n- Pricing model: Freemium iOS app with in-app subscriptions",
-          "category": "SaaS",
-          "publishedAt": "2026-11-02T14:05:38.720Z",
-          "firstSeen": "2026-10-30T17:24:23.329Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
+          "url": "https://trustmrr.com/startup/storystitch",
+          "productUrl": "https://storystitch.ai/",
+          "title": "StoryStitch",
+          "description": "Turn imagination into stories they'll treasure forever. E-Books. AudioBooks. Physical Books.",
+          "category": "Other",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 124.14,
-            "mrrUsd": 58.64,
-            "totalUsd": 200.89,
-            "growth30d": 61.74592833876221,
-            "profitMarginReported": 85,
+            "last30DaysUsd": 113.64667956425274,
+            "mrrUsd": 0,
+            "totalUsd": 114.97138976243326,
+            "growth30d": 8478.984272963602,
+            "profitMarginReported": null,
             "foundedAt": null,
-            "observedAt": "2026-11-02T14:05:38.720Z",
-            "syncedAt": "2026-11-02T12:55:02.029Z",
-            "paymentProvider": "revenuecat",
-            "sourceUrl": "https://trustmrr.com/startup/ar-drawing-sketch"
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": null,
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/storystitch"
           }
         }
       ],
       "momentum": 0,
-      "velocity": 0,
+      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -3679,7 +3737,7 @@
         "s_a6158c13f30ee0ebc9dde8ba"
       ],
       "firstSeen": "2026-11-09T03:30:43.292Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "5a88e80c026fd338670338d1",
       "analysisStatus": "pending",
       "signals": [
@@ -3691,18 +3749,18 @@
           "title": "objekto",
           "description": "objekto turns a description into a real object. Type a few words or send a photo or a sketch: its AI designs the 3D model part by part as parametric CAD, checks that every part is print-ready (walls,",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-09T03:30:43.292Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 350.75669880055864,
-            "mrrUsd": 78.02,
+            "mrrUsd": 0,
             "totalUsd": 350.75669880055864,
             "growth30d": null,
             "profitMarginReported": 70,
             "foundedAt": "2026-11-04T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/objekto"
@@ -3710,7 +3768,7 @@
         }
       ],
       "momentum": 0,
-      "velocity": null,
+      "velocity": 0,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -3756,6 +3814,51 @@
       ],
       "momentum": 0,
       "velocity": 0,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
+      "id": "p_7a421aaa89637e5e711dee0d",
+      "title": "MacPip",
+      "category": "AI",
+      "signalIds": [
+        "s_cf1c16482cb4d4cd01120ec8"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "5f2304702bac5222766cf64d",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_cf1c16482cb4d4cd01120ec8",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/macpip",
+          "productUrl": "https://macpip.com/",
+          "title": "MacPip",
+          "description": "MacPip is a free directory and daily launch site for Mac apps, dressed like a 1984 Macintosh. Makers list their app for free or launch on a day they pick, and visitors vote. Votes set the rank and pic",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 194.93999999999997,
+            "mrrUsd": 0,
+            "totalUsd": 194.93999999999997,
+            "growth30d": null,
+            "profitMarginReported": 98,
+            "foundedAt": "2026-10-30T00:00:00.000Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
+            "syncedAt": null,
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/macpip"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -4126,7 +4229,7 @@
         "s_d43dec89b697f09194f1b0dd"
       ],
       "firstSeen": "2026-10-25T20:06:58.048Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "64757b6a5c38fe6c2fafc74a",
       "analysisStatus": "pending",
       "signals": [
@@ -4138,18 +4241,18 @@
           "title": "PDF Vault",
           "description": "PDF Vault is a done-for-you digital business-in-a-box. Members license ready-to-sell PDFs that come with a hosted sales page, and they keep 100% of their sales. It earns money two ways: one-time licen",
           "category": "E-commerce",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-25T20:06:58.048Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 9340.27,
-            "mrrUsd": 2331,
-            "totalUsd": 68868.39,
-            "growth30d": -6.952322681036978,
+            "last30DaysUsd": 9345.27,
+            "mrrUsd": 2322,
+            "totalUsd": 68918.39,
+            "growth30d": -5.438803612672843,
             "profitMarginReported": 95,
             "foundedAt": "2026-03-06T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/pdf-vault"
@@ -4158,51 +4261,6 @@
       ],
       "momentum": 0,
       "velocity": 0,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
-      "id": "p_b2d9aa24d8b205bfc2975fd0",
-      "title": "CatalogoHoy",
-      "category": "E-commerce",
-      "signalIds": [
-        "s_8a0163ca5a4d349d975802ad"
-      ],
-      "firstSeen": "2026-11-09T03:30:43.292Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
-      "fingerprint": "1d7a293ee87b3cd307fc8249",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_8a0163ca5a4d349d975802ad",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/catalogohoy",
-          "productUrl": "https://catalogohoy.com/",
-          "title": "CatalogoHoy",
-          "description": "Manage an online product catalog, orders, sales, customers, and store metrics from your phone.",
-          "category": "E-commerce",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
-          "firstSeen": "2026-11-09T03:30:43.292Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 1725.8946329089872,
-            "mrrUsd": 359.27,
-            "totalUsd": 5968.304295668627,
-            "growth30d": 0,
-            "profitMarginReported": 88,
-            "foundedAt": "2026-03-05T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
-            "syncedAt": null,
-            "paymentProvider": "revenuecat",
-            "sourceUrl": "https://trustmrr.com/startup/catalogohoy"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -4261,7 +4319,7 @@
         "s_92642aca538d536bc16afcab"
       ],
       "firstSeen": "2026-11-06T22:30:19.363Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "d9327aad0145a4d541d02b68",
       "analysisStatus": "pending",
       "signals": [
@@ -4273,18 +4331,18 @@
           "title": "Usagebar",
           "description": "Track Claude Code Usage from your Menu Bar. Organic traffic of 40k developers per quarter.",
           "category": "Developer",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-06T22:30:19.363Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 1484.07,
+            "last30DaysUsd": 1506.87,
             "mrrUsd": 102,
-            "totalUsd": 8579.88,
-            "growth30d": -28.67139925310365,
+            "totalUsd": 8621.68,
+            "growth30d": -27.807775377969758,
             "profitMarginReported": 100,
             "foundedAt": "2026-01-23T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/usagebar"
@@ -4396,7 +4454,7 @@
         "s_ef82ed71113ab02b9591f952"
       ],
       "firstSeen": "2026-11-01T21:28:49.275Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "8efbc77dd3c7a064bbee0f1c",
       "analysisStatus": "pending",
       "signals": [
@@ -4408,18 +4466,18 @@
           "title": "Figmentor",
           "description": "The #1 plugin that transforms Figma frames into fully importable Elementor JSON files with pixel-perfect accuracy and SEO optimization. The business has 6,335 registered users, approximately 6,400 Fig",
           "category": "SaaS",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-01T21:28:49.275Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 1595.8561470631798,
+            "last30DaysUsd": 1624.2448788106983,
             "mrrUsd": 1787,
-            "totalUsd": 42888.44777468998,
-            "growth30d": -36.178310105447544,
+            "totalUsd": 42916.836506437496,
+            "growth30d": -34.128639357343424,
             "profitMarginReported": 95,
             "foundedAt": "2025-08-01T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "paddle",
             "sourceUrl": "https://trustmrr.com/startup/figmentor"
@@ -4468,51 +4526,6 @@
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/talkeasy"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": 0,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
-      "id": "p_ee25906808dae88b8a914861",
-      "title": "fastwrite.io",
-      "category": "AI",
-      "signalIds": [
-        "s_a202709590b7080a1c860d9f"
-      ],
-      "firstSeen": "2026-10-12T23:55:30.799Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "96fd75cca81568be857ec4e0",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_a202709590b7080a1c860d9f",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/fastwrite-io",
-          "productUrl": "https://fastwrite.io/",
-          "title": "fastwrite.io",
-          "description": "fastwrite.io is an edtech SaaS company building AI-powered writing tools for students. Its platform assists with drafting, editing, and improving academic texts, helping users produce higher-quality w",
-          "category": "AI",
-          "publishedAt": "2026-11-02T14:05:38.720Z",
-          "firstSeen": "2026-10-12T23:55:30.799Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 11384.720148183074,
-            "mrrUsd": 12231.18,
-            "totalUsd": 208850.48336221807,
-            "growth30d": -15.181676085876008,
-            "profitMarginReported": 65,
-            "foundedAt": "2025-05-08T00:00:00.000Z",
-            "observedAt": "2026-11-02T14:05:38.720Z",
-            "syncedAt": null,
-            "paymentProvider": "stripe",
-            "sourceUrl": "https://trustmrr.com/startup/fastwrite-io"
           }
         }
       ],
@@ -4576,7 +4589,7 @@
         "s_9ff66cc34fac2283862cb189"
       ],
       "firstSeen": "2026-10-26T02:09:39.082Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "a6456da54f5443c9cdc69175",
       "analysisStatus": "pending",
       "signals": [
@@ -4588,18 +4601,18 @@
           "title": "Volume Booster: Louder Sound",
           "description": "Volume Booster helps you make quiet videos and audio files louder directly on your iPhone or iPad. | About 3,000 downloads a month from App Store search. We have never spent money on ads. | No servers",
           "category": "Consumer",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-26T02:09:39.082Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 473.39,
-            "mrrUsd": 243.49,
-            "totalUsd": 1224.32,
-            "growth30d": -9.419846159733652,
+            "last30DaysUsd": 510.37,
+            "mrrUsd": 246.57,
+            "totalUsd": 1261.3,
+            "growth30d": -6.551605372928707,
             "profitMarginReported": 100,
             "foundedAt": "2025-04-01T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "revenuecat",
             "sourceUrl": "https://trustmrr.com/startup/volumebooster"
@@ -4621,7 +4634,7 @@
         "s_dcdafd5f2e1d488173d5efd3"
       ],
       "firstSeen": "2026-10-29T03:19:30.538Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "b0274f1989fead4765cc8ab8",
       "analysisStatus": "pending",
       "signals": [
@@ -4633,18 +4646,18 @@
           "title": "Get Funneled",
           "description": "AI Native post click funnel experience for D2C brands Productized service offering that AI does 97% of the work for",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-29T03:19:30.538Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 19131.719024907507,
-            "mrrUsd": 18400.1,
+            "last30DaysUsd": 18362.819024907505,
+            "mrrUsd": 18402.66,
             "totalUsd": 112245.12526226326,
-            "growth30d": -0.11863914383793553,
+            "growth30d": -4.132851262587929,
             "profitMarginReported": 90,
             "foundedAt": "2025-01-01T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/getfunneled"
@@ -4936,7 +4949,7 @@
         "s_2959e7bdb6b8c1af130feb3b"
       ],
       "firstSeen": "2026-11-05T13:40:40.279Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "585c74cd4ddf5a6301b58fbf",
       "analysisStatus": "pending",
       "signals": [
@@ -4948,18 +4961,18 @@
           "title": "AiSDR INC.",
           "description": "AiSDR is an AI sales development platform for B2B teams. Its AI GTM agent, Ami, turns your website into an outbound plan, finds relevant buyers and runs approved email and LinkedIn campaigns. It handl",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-05T13:40:40.279Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 177803.09953995922,
-            "mrrUsd": 193028.34,
+            "last30DaysUsd": 177053.09953995922,
+            "mrrUsd": 191384.65,
             "totalUsd": 5324908.868231864,
-            "growth30d": -12.014881230840276,
+            "growth30d": -11.296625283342191,
             "profitMarginReported": 60,
             "foundedAt": "2023-07-17T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/aisdr-inc"
@@ -5026,7 +5039,7 @@
         "s_2b91033c366ff6fab24ba0e4"
       ],
       "firstSeen": "2026-11-05T23:00:22.167Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "ef9d490accbd931afe84c501",
       "analysisStatus": "pending",
       "signals": [
@@ -5038,9 +5051,9 @@
           "title": "Penmo",
           "description": "Penmo plans and creates content that helps businesses turn interest into customers. We build connected content funnels using blogs, landing pages, emails, case studies, and social posts, with human wr",
           "category": "AI",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-11-05T23:00:22.167Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 6725,
@@ -5049,7 +5062,7 @@
             "growth30d": 0,
             "profitMarginReported": 90,
             "foundedAt": "2022-01-01T00:00:00.000Z",
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "stripe",
             "sourceUrl": "https://trustmrr.com/startup/penmo"
@@ -5296,7 +5309,7 @@
         "s_12b3c4c93cc6a9b3981d992c"
       ],
       "firstSeen": "2026-10-25T20:06:58.048Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "46cd58644bbb95f7b86142a4",
       "analysisStatus": "pending",
       "signals": [
@@ -5308,18 +5321,18 @@
           "title": "Whis AI",
           "description": "Helps you answer interviews in real-time.",
           "category": "Other",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-25T20:06:58.048Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
-            "last30DaysUsd": 5882.016165020023,
-            "mrrUsd": 3897.89,
-            "totalUsd": 5882.016165020023,
+            "last30DaysUsd": 6063.812506285431,
+            "mrrUsd": 3947.43,
+            "totalUsd": 6063.812506285431,
             "growth30d": 0,
             "profitMarginReported": 60,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "dodopayment",
             "sourceUrl": "https://trustmrr.com/startup/whis-ai"
@@ -5328,6 +5341,51 @@
       ],
       "momentum": 0,
       "velocity": 0,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
+      "id": "p_98d78cf699b5bf258e9b79c1",
+      "title": "Jiro Build",
+      "category": "AI",
+      "signalIds": [
+        "s_5ec8ff64d9b0878611000aef"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "eb9778825dda674afbd01095",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_5ec8ff64d9b0878611000aef",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/jiro-build",
+          "productUrl": "https://jiro.build/",
+          "title": "Jiro Build",
+          "description": "A library of AI-ready design prompts, templates, and components that helps people build polished websites faster in AI coding tools, plus a website builder for creating and publishing sites.",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 4488,
+            "mrrUsd": 319.5,
+            "totalUsd": 17170.02,
+            "growth30d": -6.597294484911551,
+            "profitMarginReported": null,
+            "foundedAt": null,
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": null,
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/jiro-build"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -5413,51 +5471,6 @@
             "syncedAt": null,
             "paymentProvider": "polar",
             "sourceUrl": "https://trustmrr.com/startup/woday"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": null,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
-      "id": "p_1ead721d492451400efbd444",
-      "title": "Toingg",
-      "category": "Developer",
-      "signalIds": [
-        "s_c00ffc9d4685924b57f50efd"
-      ],
-      "firstSeen": "2026-11-02T14:05:38.466Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "b1bf429b4c321f88932eeb7c",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_c00ffc9d4685924b57f50efd",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/razorpay-business-8",
-          "productUrl": "https://toingg.com/",
-          "title": "Toingg",
-          "description": "Helps creators develop compelling short-form video scripts and connect with strategists, editors, and clients to produce and grow Reels.",
-          "category": "Developer",
-          "publishedAt": "2026-11-02T14:05:38.710Z",
-          "firstSeen": "2026-11-02T14:05:38.466Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 2500.191754550521,
-            "mrrUsd": 0,
-            "totalUsd": 22045.238176032723,
-            "growth30d": -8.327134448639503,
-            "profitMarginReported": null,
-            "foundedAt": null,
-            "observedAt": "2026-11-02T14:05:38.710Z",
-            "syncedAt": null,
-            "paymentProvider": "razorpay",
-            "sourceUrl": "https://trustmrr.com/startup/razorpay-business-8"
           }
         }
       ],
@@ -5701,7 +5714,7 @@
         "s_bddb802fb979897476ef617c"
       ],
       "firstSeen": "2026-10-12T13:48:10.414Z",
-      "lastSeen": "2026-11-09T03:30:43.292Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
       "fingerprint": "db3190042ac77f9699f21f6f",
       "analysisStatus": "pending",
       "signals": [
@@ -5713,9 +5726,9 @@
           "title": "Mat: Photo Widget Maker",
           "description": "Mat turns your photos into personal Home Screen widgets. Capture live camera cutouts or import photos, arrange and layer them on a mat, and decorate with polaroids, stamps, clocks and paper letters. B",
           "category": "SaaS",
-          "publishedAt": "2026-11-09T03:30:43.561Z",
+          "publishedAt": "2026-11-09T14:38:03.395Z",
           "firstSeen": "2026-10-12T13:48:10.414Z",
-          "lastSeen": "2026-11-09T03:30:43.292Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
           "engagement": 0,
           "revenue": {
             "last30DaysUsd": 467.9346316715754,
@@ -5724,7 +5737,7 @@
             "growth30d": -42.97754881958597,
             "profitMarginReported": 85,
             "foundedAt": null,
-            "observedAt": "2026-11-09T03:30:43.561Z",
+            "observedAt": "2026-11-09T14:38:03.395Z",
             "syncedAt": null,
             "paymentProvider": "appstore",
             "sourceUrl": "https://trustmrr.com/startup/mat-photo-widget-maker"
@@ -5874,6 +5887,51 @@
       "confidence": "low"
     },
     {
+      "id": "p_4f2f006314f51f101049cdb5",
+      "title": "Syed Anas",
+      "category": "AI",
+      "signalIds": [
+        "s_e004c2dc50c349760962249e"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "8430e7e73929207990dbf273",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_e004c2dc50c349760962249e",
+          "source": "trustmrr",
+          "url": "https://trustmrr.com/startup/syed-anas",
+          "productUrl": "https://anasw.com/",
+          "title": "Syed Anas",
+          "description": "AI product manager and builder helping SMBs and startups go from idea to paying users: AI support agents, AI MVPs, websites, social media and lead-gen automation, AI SEO/AEO/GEO, and fractional AI pro",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:38:03.381Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 0,
+          "revenue": {
+            "last30DaysUsd": 375,
+            "mrrUsd": 490,
+            "totalUsd": 375,
+            "growth30d": 0,
+            "profitMarginReported": null,
+            "foundedAt": null,
+            "observedAt": "2026-11-09T14:38:03.381Z",
+            "syncedAt": null,
+            "paymentProvider": "stripe",
+            "sourceUrl": "https://trustmrr.com/startup/syed-anas"
+          }
+        }
+      ],
+      "momentum": 0,
+      "velocity": null,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
       "id": "p_6f0a26f3a33aa829393728aa",
       "title": "ConnectMyShop",
       "category": "AI",
@@ -5964,51 +6022,6 @@
       "confidence": "low"
     },
     {
-      "id": "p_a1cd88c0c94a35e9ebe5dd4a",
-      "title": "Ringvoo",
-      "category": "SaaS",
-      "signalIds": [
-        "s_97fa2e11d5be27bd1ff699e0"
-      ],
-      "firstSeen": "2026-11-02T14:05:38.466Z",
-      "lastSeen": "2026-11-02T14:05:38.466Z",
-      "fingerprint": "fc153d0d84d007e3cab0aec0",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_97fa2e11d5be27bd1ff699e0",
-          "source": "trustmrr",
-          "url": "https://trustmrr.com/startup/ringvoo",
-          "productUrl": "https://ringvoo.com/",
-          "title": "Ringvoo",
-          "description": "Make affordable international calls to mobile and landline numbers worldwide directly from your browser with flexible pay-as-you-go pricing. No app downloads or monthly calling subscriptions required.",
-          "category": "SaaS",
-          "publishedAt": "2026-11-02T14:05:38.710Z",
-          "firstSeen": "2026-11-02T14:05:38.466Z",
-          "lastSeen": "2026-11-02T14:05:38.466Z",
-          "engagement": 0,
-          "revenue": {
-            "last30DaysUsd": 312.6,
-            "mrrUsd": 22.6,
-            "totalUsd": 1566,
-            "growth30d": -60.65945129624969,
-            "profitMarginReported": null,
-            "foundedAt": null,
-            "observedAt": "2026-11-02T14:05:38.710Z",
-            "syncedAt": null,
-            "paymentProvider": "stripe",
-            "sourceUrl": "https://trustmrr.com/startup/ringvoo"
-          }
-        }
-      ],
-      "momentum": 0,
-      "velocity": null,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
       "id": "p_c0ae05d329f6a03379c3b661",
       "title": "Residency Mexico",
       "category": "Other",
@@ -6048,6 +6061,39 @@
       ],
       "momentum": 0,
       "velocity": 0,
+      "stage": "radar",
+      "opportunityScore": null,
+      "review": null,
+      "confidence": "low"
+    },
+    {
+      "id": "p_42d0d220c3dc643e15f9a7fe",
+      "title": "Show HN: Raw RAG leaks 0%, but agent memory leaks 67%",
+      "category": "AI",
+      "signalIds": [
+        "s_a38869088c90c67563824e6c"
+      ],
+      "firstSeen": "2026-11-09T14:38:03.169Z",
+      "lastSeen": "2026-11-09T14:38:03.169Z",
+      "fingerprint": "b25aaddf1453449fde707e38",
+      "analysisStatus": "pending",
+      "signals": [
+        {
+          "id": "s_a38869088c90c67563824e6c",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com/item?id=50426194",
+          "productUrl": "https://github.com/harishbalasubramanian/sentinel-eval",
+          "title": "Show HN: Raw RAG leaks 0%, but agent memory leaks 67%",
+          "description": "",
+          "category": "AI",
+          "publishedAt": "2026-11-09T14:33:07.000Z",
+          "firstSeen": "2026-11-09T14:38:03.169Z",
+          "lastSeen": "2026-11-09T14:38:03.169Z",
+          "engagement": 1
+        }
+      ],
+      "momentum": 72,
+      "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
       "review": null,
@@ -6178,7 +6224,7 @@
           "engagement": 3
         }
       ],
-      "momentum": 90,
+      "momentum": 87,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -6211,7 +6257,7 @@
           "engagement": 2
         }
       ],
-      "momentum": 71,
+      "momentum": 67,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -6244,7 +6290,7 @@
           "engagement": 1
         }
       ],
-      "momentum": 31,
+      "momentum": 29,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -6310,7 +6356,7 @@
           "engagement": 1
         }
       ],
-      "momentum": 26,
+      "momentum": 24,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
@@ -7032,53 +7078,6 @@
         }
       ],
       "momentum": 99,
-      "velocity": null,
-      "stage": "radar",
-      "opportunityScore": null,
-      "review": null,
-      "confidence": "low"
-    },
-    {
-      "id": "p_780891676e871a7ed97770ea",
-      "title": "Show HN: An interactive model of expectations and recessions (2026 econ Nobel)",
-      "category": "AI",
-      "signalIds": [
-        "s_3d78d9b6acfc4fc889dd709e",
-        "s_d013d58abd1c28f0cb22ab0d"
-      ],
-      "firstSeen": "2026-10-21T16:15:33.233Z",
-      "lastSeen": "2026-11-03T13:12:20.216Z",
-      "fingerprint": "813b7e221d2b096ec0f8297c",
-      "analysisStatus": "pending",
-      "signals": [
-        {
-          "id": "s_3d78d9b6acfc4fc889dd709e",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com/item?id=50182533",
-          "productUrl": "https://jeff-kline.github.io/posts/economics-nobel-2026/index.html",
-          "title": "Show HN: An interactive model of expectations and recessions (2026 econ Nobel)",
-          "description": "This year’s Nobel Prize in economics is about how expectations affect the economy. News about AI’s impact on work, tariffs, and oil supply shocks makes this work feel especially relevant.<p>I don’t have a background in economics, and it was not obvious to me how expectations connect to policy, so I wanted to build a page that, at least in a small way, made that connection clear and sharpened my thinking on the subject.<p>I directed the work and edited the prose heavily, collaborating with AI on research, code, and drafting. The model is essentially a three-equation linear system; the model runs locally in your browser, and the solver code is on the page.<p>I welcome corrections from people who know this field.",
-          "category": "AI",
-          "publishedAt": "2026-10-21T15:20:40.000Z",
-          "firstSeen": "2026-10-21T16:15:33.233Z",
-          "lastSeen": "2026-10-21T20:59:29.434Z",
-          "engagement": 2
-        },
-        {
-          "id": "s_d013d58abd1c28f0cb22ab0d",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com/item?id=50351277",
-          "productUrl": "https://jeff-kline.github.io/posts/same-ai-results-for-less/index.html",
-          "title": "Show HN: A tool to optimize AI model cost without benchmark score trade-offs",
-          "description": "I created this page to apply data envelopment analysis to find the Pareto frontier of cost and benchmark scores. The goal is to identify the cheapest model or a theoretical blend of models applied to tasks that meets the same benchmark scores as your selected model. This is based on a 2022 paper I coauthored. Benchmark sources include Artificial Analysis, ToneBench, Hermes3000 and Slidely, from September–October 2026.",
-          "category": "AI",
-          "publishedAt": "2026-11-03T12:38:49.000Z",
-          "firstSeen": "2026-11-03T13:12:20.216Z",
-          "lastSeen": "2026-11-03T13:12:20.216Z",
-          "engagement": 2
-        }
-      ],
-      "momentum": 63,
       "velocity": null,
       "stage": "radar",
       "opportunityScore": null,
