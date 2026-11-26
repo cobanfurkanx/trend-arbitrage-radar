@@ -1,0 +1,28 @@
+name: Radar freshness
+on:
+  schedule:
+    - cron: "23 3,9,15,21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Check production snapshot
+        run: |
+          node --input-type=module <<'JS'
+          const response = await fetch('https://trendradar.shepardai.pro/data/radar.json', {
+            cache: 'no-store',
+            signal: AbortSignal.timeout(20000),
+          });
+          if (!response.ok) throw new Error(`Radar snapshot returned HTTP ${response.status}`);
+          const { lastSuccessfulCollection } = await response.json();
+          const ageHours = (Date.now() - Date.parse(lastSuccessfulCollection)) / 3600000;
+          if (!Number.isFinite(ageHours) || ageHours < 0) throw new Error('Invalid collection timestamp');
+          if (ageHours > 9) throw new Error(`Collection is ${ageHours.toFixed(1)}h old. Inspect the Radar refresh workflow.`);
+          console.log(`Collection is ${ageHours.toFixed(1)}h old.`);
+          JS
