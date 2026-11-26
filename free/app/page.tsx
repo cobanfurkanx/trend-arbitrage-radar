@@ -8,10 +8,13 @@ import { builderProfile, compareForBuilder, defaultBuilderFilters, matchesBuilde
 import { BuilderBadges, BuilderControls, BuilderSummary } from "./builder-controls";
 import { compareRevenue, matchesRevenue, revenueOf } from "../../src/lib/radar/revenue";
 import { RevenuePanel } from "./revenue-panel";
+import { IdeaComparison } from "./idea-comparison";
 
 import { vetAnalysis } from "../../src/lib/radar/analysis-quality";
 
 const STORAGE = "trendcatcher.notebook.v1";
+const REFRESH_DELAY_HOURS = 9; // Six-hour schedule with three hours for delays.
+const MAX_COMPARISON = 3;
 const categories: Record<string, string> = { AI: "Yapay zeka", SaaS: "SaaS", Developer: "Geliştirici araçları", Consumer: "Tüketici", "E-commerce": "E-ticaret", Social: "Sosyal", Content: "İçerik", Domains: "Domain", Other: "Diğer" };
 const statuses = { watching: "İzliyorum", interviewing: "Müşteri görüşmesi", building: "Geliştiriyorum", paid: "İlk ödeme", dropped: "Vazgeçtim" };
 const evidenceLabels = { pricing: "Fiyatlandırma", paying_customers: "Ödeme yapan müşteriler", turkey_demand: "Türkiye talebi", competitor: "Rakip araştırması", distribution: "Müşteri erişimi" };
@@ -42,6 +45,7 @@ export default function Page() {
   const [sort, setSort] = useState("momentum");
   const [builderFilters, setBuilderFilters] = useState(defaultBuilderFilters);
   const [selected, setSelected] = useState<string | null>(null);
+  const [comparisonIds, setComparisonIds] = useState<string[]>([]);
   const [reload, setReload] = useState(0);
   useEffect(() => {
     const ctrl = new AbortController();
@@ -68,7 +72,12 @@ export default function Page() {
     return () => window.removeEventListener("popstate", sync);
   }, []);
   function update(id: string, value: Notebook[string] | null) {
-    const next = { ...notebookRef.current }; if (value) next[id] = value; else delete next[id];
+    const next = { ...notebookRef.current };
+    if (value) next[id] = value;
+    else {
+      delete next[id];
+      setComparisonIds((ids) => ids.filter((item) => item !== id));
+    }
     notebookRef.current = next;
     setNotebook(next);
     try { localStorage.setItem(STORAGE, JSON.stringify(next)); }
@@ -81,6 +90,8 @@ export default function Page() {
   }
   const cards = data?.cards ?? [];
   const active = cards.find((c) => c.id === selected);
+  const comparable = tab === "saved" ? cards.filter((c) => notebook[c.id] && builderProfile(c).kind === "product") : [];
+  const compared = comparable.filter((c) => comparisonIds.includes(c.id));
   const visible = cards.filter((c) => {
     const kind = builderProfile(c).kind;
     if (tab === "saved" ? !notebook[c.id] : tab === "tools" ? kind !== "tool" : kind === "tool" || (tab === "revenue" ? !matchesRevenue(c, revenuePreset) : tab === "validated" ? c.stage !== "validated" : c.stage !== "radar")) return false;
@@ -89,7 +100,8 @@ export default function Page() {
     if (days !== "all" && (!c.analysis || c.analysis.mvpDays > Number(days))) return false;
     return `${c.title} ${c.analysis?.title ?? ""} ${c.analysis?.summary ?? ""} ${c.analysis?.customer ?? ""} ${c.signals.map((s) => s.description).join(" ")}`.toLocaleLowerCase("tr").includes(query.toLocaleLowerCase("tr"));
   }).sort((a, b) => sort === "newest" ? b.firstSeen.localeCompare(a.firstSeen) : sort === "score" ? (b.opportunityScore ?? -1) - (a.opportunityScore ?? -1) : tab === "revenue" ? compareRevenue(a, b) : compareForBuilder(a, b));
-  const stale = data?.lastSuccessfulCollection && Date.now() - Date.parse(data.lastSuccessfulCollection) > 48 * 3600000;
+  const stale = data?.lastSuccessfulCollection && Date.now() - Date.parse(data.lastSuccessfulCollection) > REFRESH_DELAY_HOURS * 3600000;
+  const revenueCount = cards.filter((c) => builderProfile(c).kind !== "tool" && matchesRevenue(c, "meaningful")).length;
   return <div className="min-h-screen flex flex-col">
     <header className="border-b border-line bg-paper"><div className="mx-auto flex min-h-16 max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
       <button onClick={() => openCard(null)} className="font-serif text-xl font-semibold tracking-tight">TrendRadar</button>
@@ -109,9 +121,9 @@ export default function Page() {
             {[ [cards.filter((c) => builderProfile(c).solo).length, "solo MVP adayı"], [cards.filter((c) => builderProfile(c).kind === "tool").length, "yapım aracı"], [cards.filter((c) => c.stage === "validated" && builderProfile(c).kind === "product").length, "kanıtları incelendi"] ].map(([count, label]) => <div key={label} className="border-r border-line pl-3 first:pl-0 last:border-0 sm:pl-6"><p className="font-serif text-3xl tnum">{count}</p><p className="mt-1 text-xs text-ink-dim">{label}</p></div>)}
           </div>
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-dim"><span>Son başarılı tarama: {data.lastSuccessfulCollection ? date(data.lastSuccessfulCollection) : "Henüz yok"}</span><span>{data.sources.filter((s) => s.status === "ok").length} kaynak akışı erişilebilir</span></div>
-          {stale && <p role="status" className="mt-2 text-sm text-ochre">Son tarama 48 saatten eski. Aşağıdaki kayıtlar son başarılı seçkidir.</p>}
+          {stale && <p role="status" className="mt-2 text-sm text-ochre">Tarama gecikti. Son başarılı taramanın üzerinden {REFRESH_DELAY_HOURS} saatten fazla geçti.</p>}
           {data.sources.some((s) => s.status === "failed") && <p className="mt-2 text-xs text-ochre">Geçici olarak erişilemeyen kaynaklar: {data.sources.filter((s) => s.status === "failed").map((s) => s.name).join(", ")}. Önceki kayıtlar korunuyor.</p>}
-          {cards.some((c) => matchesRevenue(c, "meaningful")) && <button className="mt-5 w-full border border-line bg-paper-soft p-4 text-left text-sm hover:border-brick" onClick={() => { setTab("revenue"); setBuilderFilters({ ...defaultBuilderFilters, scope: "all" }); setDays("all"); setCategory("all"); setQuery(""); }}><strong>{cards.filter((c) => matchesRevenue(c, "meaningful")).length} gelirli ürün dosyası</strong><span className="ml-2 text-ink-dim">Son 30 günde en az 100 $ gelir · Kaynakları incele →</span></button>}
+          {revenueCount > 0 && <button className="mt-5 w-full border border-line bg-paper-soft p-4 text-left text-sm hover:border-brick" onClick={() => { setTab("revenue"); setRevenuePreset("meaningful"); setBuilderFilters({ ...defaultBuilderFilters, scope: "all" }); setDays("all"); setCategory("all"); setQuery(""); }}><strong>{revenueCount} gelirli ürün dosyası</strong><span className="ml-2 text-ink-dim">Son 30 günde en az 100 $ gelir · Kaynakları incele →</span></button>}
           <nav className="mt-8 flex flex-wrap gap-4 border-b border-line" aria-label="Fikir listeleri">
             {[ ["revenue", "Gelirli örnekler"], ["radar", "Erken radar"], ["validated", "Kanıtlı fırsatlar"], ["tools", "Yapım araçları"], ["saved", "Çalışma listem"] ].map(([value, label]) => <button key={value} onClick={() => setTab(value)} aria-current={tab === value ? "page" : undefined} className={`border-b-2 px-1 pb-3 text-sm ${tab === value ? "border-brick font-semibold" : "border-transparent text-ink-dim"}`}>{label}</button>)}
           </nav>
@@ -140,10 +152,28 @@ export default function Page() {
             catch { setNotice("Yedek okunamadı. Geçerli bir TrendRadar JSON yedeği seç."); }
             e.target.value = "";
           }} /></label></div>}
+          {comparable.length >= 2 && <p className="mb-3 text-sm text-ink-soft" role="status">
+            Karşılaştırmak için 2 veya 3 fikir seç. {compared.length} / {MAX_COMPARISON} seçili.
+          </p>}
+          {compared.length >= 2 && <IdeaComparison cards={compared} />}
           {!visible.length ? <div className="border-y border-line py-12"><h2 className="font-serif text-2xl">{tab === "validated" ? "Henüz kanıtları tamamlanmış fırsat yok." : tab === "saved" ? "Çalışma listen boş veya filtreye uyan kayıt yok." : "Bu filtrelere uyan sinyal yok."}</h2><p className="mt-2 text-sm text-ink-soft">{tab === "validated" ? "Kanıtlar incelendikçe burada görünecek. Yeni hipotezleri erken radarda inceleyebilirsin." : "Filtreleri temizle veya erken radardan bir fikri kaydet."}</p><button className="btn-ghost mt-4" onClick={() => { setTab("radar"); setBuilderFilters({ ...defaultBuilderFilters, scope: "all" }); setQuery(""); setDays("all"); setCategory("all"); }}>Erken radarı göster</button></div>
           : <div className="border-b border-line">{visible.map((c) => <article key={c.id} className="grid gap-4 border-t border-line py-6 md:grid-cols-[1fr_200px]">
             <div><p className="text-xs text-ink-faint">{categories[c.category] ?? c.category} · {revenueOf(c) ? c.title : c.stage === "validated" ? "Kanıtları incelendi" : "Erken sinyal"}</p><h2 className="mt-1 font-serif text-2xl font-semibold leading-snug"><a href={`?idea=${c.id}`} onClick={(e) => { e.preventDefault(); openCard(c.id); }} className="hover:text-brick">{builderProfile(c).kind === "tool" ? c.title : c.analysis?.title ?? c.title}</a></h2><p className="mt-2 text-sm leading-relaxed text-ink-soft">{revenueOf(c) ? c.analysis?.customer ?? "Gelir ayrıntıları aşağıda." : (builderProfile(c).kind === "tool" ? c.signals[0]?.description : c.analysis?.summary ?? c.signals[0]?.description) ?? "Kaynakları incele."}</p><RevenuePanel card={c} compact /><BuilderBadges card={c} /><p className="mt-3 text-xs text-ink-dim">{c.signals.length} kayıt · {Array.from(new Set(c.signals.map((s) => s.source))).join(" · ")} · Keşif {date(c.firstSeen)}</p></div>
-            <aside className="flex items-start justify-between gap-3 md:flex-col"><div><p className="kicker">{revenueOf(c) ? "Ticari sinyal" : c.opportunityScore !== null ? "Fırsat önceliği" : "Sinyal önceliği"}</p><p className="mt-1 font-serif text-3xl tnum">{revenueOf(c) ? "Gelir kaydı" : <>{c.opportunityScore ?? c.momentum}<span className="text-sm text-ink-faint"> / 100</span></>}</p><p className="mt-2 text-xs text-ink-dim">Türkiye talebi: {c.stage === "validated" ? "kanıtı incelendi" : "bilinmiyor"}</p><p className="mt-1 text-xs text-ink-dim">MVP: {c.analysis ? `~${c.analysis.mvpDays} gün · tahmin` : "değerlendirilmedi"}</p></div><div className="flex gap-2"><button disabled={!storageReady} aria-label={notebook[c.id] ? "Listeden çıkar" : "Kaydet"} aria-pressed={!!notebook[c.id]} className="btn-ghost px-2" onClick={() => update(c.id, notebook[c.id] ? null : { status: "watching", note: "" })}><Bookmark size={16} fill={notebook[c.id] ? "currentColor" : "none"} /></button><button className="btn-ghost text-xs" onClick={() => openCard(c.id)}>İncele</button></div></aside>
+            <aside className="flex items-start justify-between gap-3 md:flex-col"><div><p className="kicker">{revenueOf(c) ? "Ticari sinyal" : c.opportunityScore !== null ? "Fırsat önceliği" : "Sinyal önceliği"}</p><p className="mt-1 font-serif text-3xl tnum">{revenueOf(c) ? "Gelir kaydı" : <>{c.opportunityScore ?? c.momentum}<span className="text-sm text-ink-faint"> / 100</span></>}</p><p className="mt-2 text-xs text-ink-dim">Türkiye talebi: {c.stage === "validated" ? "kanıtı incelendi" : "bilinmiyor"}</p><p className="mt-1 text-xs text-ink-dim">MVP: {c.analysis ? `~${c.analysis.mvpDays} gün · tahmin` : "değerlendirilmedi"}</p></div><div className="flex flex-wrap items-center gap-2">
+              {comparable.length >= 2 && comparable.includes(c) && <label className="flex items-center gap-1.5 text-xs">
+                <input
+                  type="checkbox"
+                  aria-label={`Karşılaştır: ${c.analysis?.title ?? c.title}`}
+                  checked={comparisonIds.includes(c.id)}
+                  disabled={compared.length >= MAX_COMPARISON && !comparisonIds.includes(c.id)}
+                  onChange={(event) => {
+                    const checked = event.currentTarget.checked;
+                    setComparisonIds((ids) => checked ? [...ids, c.id] : ids.filter((id) => id !== c.id));
+                  }}
+                />
+                Karşılaştır
+              </label>}
+              <button disabled={!storageReady} aria-label={notebook[c.id] ? "Listeden çıkar" : "Kaydet"} aria-pressed={!!notebook[c.id]} className="btn-ghost px-2" onClick={() => update(c.id, notebook[c.id] ? null : { status: "watching", note: "" })}><Bookmark size={16} fill={notebook[c.id] ? "currentColor" : "none"} /></button><button className="btn-ghost text-xs" onClick={() => openCard(c.id)}>İncele</button></div></aside>
           </article>)}</div>}
           <details className="mt-6 border border-line p-4 text-xs text-ink-dim"><summary className="cursor-pointer font-medium text-ink">Puanlar ve kaynaklar nasıl okunmalı?</summary><p className="mt-3 leading-relaxed">Vibe coder sırası; ürün türü, ticari kanıt, düşük bütçe ve solo yapılabilirliği öne alır. Müşteriye erişim değerlendirmesi varsa önceliğe katılır; eksikse bilinmiyor kabul edilir. Araç ayrımı kaynak başlığı ve açıklamasına dayanır, yanılabilir. Sinyal önceliği, aynı platformdaki yakın tarihli kayıtlarla karşılaştırılır. Tek ölçüm varsa yaşa göre düzeltilmiş ilgi kullanılır; ikinci ölçüm olmadan büyüme iddia edilmez. Platformlar bağımsız müşteri kanıtı sayılmaz. TrustMRR keşif ve pazar akışları aynı platformdur; iki bağımsız doğrulama sayılmaz. Ücretsiz uçlar sınırlı seçki döndürür; tüm pazarı kapsamaz. Gelirli seçki önce en az 100 $ ve büyüyen geliri, sonra bilinen genç kuruluşları öne alır. Çok yüksek büyüme yüzdelerine tek başına öncelik verilmez. Yedi günden eski gelir gözlemleri seçkiden çıkarılır. Fırsat puanı, ticari kanıt (%25), Türkiye talebi (%25), dağıtım (%20), yapılabilirlik (%15), farklılaşma (%10) ve sinyal (%5) değerlendirmeleri tamamlanınca görünür. Kanıt güveni editoryal değerlendirmedir; kazanç olasılığı değildir.</p><ul className="mt-3 space-y-1">{data.sources.map((s) => <li key={s.name}>{s.name}: {s.status === "ok" ? `${s.count} kayıt` : s.reason ?? (s.status === "disabled" ? "etkin değil" : "son tarama başarısız")}</li>)}</ul></details>
         </>}

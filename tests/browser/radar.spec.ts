@@ -107,6 +107,60 @@ test("backup import preserves ideas saved while the file is being read", async (
   });
 });
 
+test("compares up to three saved ideas on mobile and drops removed ideas", async ({ page }) => {
+  const ideas = Array.from({ length: 4 }, (_, i): Card => ({
+    ...card, id: `p_compare_${i}`, title: `Ürün ${i + 1}`, analysis: undefined, analysisStatus: "pending",
+  }));
+  const stamp = new Date().toISOString();
+  await page.route("**/data/radar.json", (route) => route.fulfill({
+    json: { version: 1, generatedAt: stamp, lastSuccessfulCollection: stamp, sources: [], cards: ideas },
+  }));
+  await page.addInitScript((ids) => {
+    localStorage.setItem("trendcatcher.notebook.v1", JSON.stringify(
+      Object.fromEntries(ids.map((id) => [id, { status: "watching", note: "" }])),
+    ));
+  }, ideas.map(({ id }) => id));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Çalışma listem", exact: true }).click();
+  const table = page.getByRole("table", { name: "Fikirleri karşılaştır" });
+  await page.getByRole("checkbox", { name: "Karşılaştır: Ürün 1" }).check();
+  await expect(table).toHaveCount(0);
+  await page.getByRole("checkbox", { name: "Karşılaştır: Ürün 2" }).check();
+  await expect(table.getByRole("row", { name: "Türkiye talebi Bilinmiyor Bilinmiyor" })).toBeVisible();
+  await page.getByRole("checkbox", { name: "Karşılaştır: Ürün 3" }).check();
+  await expect(table.getByRole("columnheader")).toHaveCount(4);
+  const fourth = page.getByRole("checkbox", { name: "Karşılaştır: Ürün 4" });
+  await expect(fourth).toBeDisabled();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.locator("article").filter({ has: page.getByRole("heading", { name: "Ürün 3" }) }).getByRole("button", { name: "Listeden çıkar" }).click();
+  await expect(fourth).toBeEnabled();
+  await expect(table.getByRole("columnheader", { name: "Ürün 3" })).toHaveCount(0);
+});
+
+test("collection delays are visible after the six-hour schedule and grace period", async ({ page }) => {
+  const now = new Date("2026-11-26T13:00:00Z");
+  await page.clock.setFixedTime(now);
+  let hoursSinceCollection = 8;
+  await page.route("**/data/radar.json", (route) => route.fulfill({
+    json: {
+      version: 1,
+      generatedAt: now.toISOString(),
+      lastSuccessfulCollection: new Date(now.getTime() - hoursSinceCollection * 3600000).toISOString(),
+      sources: [],
+      cards: [card],
+    },
+  }));
+  const delay = page.getByRole("status").filter({ hasText: "Tarama gecikti." });
+  await page.goto("/");
+  await expect(page.locator("article")).toHaveCount(1);
+  await expect(delay).toHaveCount(0);
+  hoursSinceCollection = 10;
+  await page.reload();
+  await expect(delay).toBeVisible();
+  await expect(page.locator("article")).toHaveCount(1);
+});
+
 test("a failed snapshot request has a recoverable error state", async ({ page }) => {
   await page.route("**/data/radar.json", (r) => r.fulfill({ status: 503 }));
   await page.goto("/");
@@ -152,7 +206,9 @@ test("revenue examples work without AI and distinguish income from profit", asyn
   await expect(page.locator("article")).toHaveCount(0);
   await page.getByLabel("Gelir seçkisi", { exact: true }).selectOption("margin");
   await expect(page.locator("article")).toHaveCount(0);
-  await page.getByLabel("Gelir seçkisi", { exact: true }).selectOption("all");
+  await page.getByRole("button", { name: /1 gelirli ürün dosyası/ }).click();
+  await expect(page.getByLabel("Gelir seçkisi", { exact: true })).toHaveValue("meaningful");
+  await expect(page.locator("article")).toHaveCount(1);
   await page.getByRole("button", { name: "İncele", exact: true }).click();
   await expect(page.getByText("Kâr marjı · sahibinin beyanı", { exact: true })).toBeVisible();
   await expect(page.getByText("Gelir, net kâr değildir.", { exact: false })).toBeVisible();
